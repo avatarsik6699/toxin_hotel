@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -100,6 +101,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin( {
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        } ),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.pug',

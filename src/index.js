@@ -1,1 +1,2 @@
-import './style/style.sass';
+import './style.sass';
+alert($('.target').html());
