@@ -23,12 +23,13 @@ const jsLoader = () => {
 
 // loaders-----------------------------------------------------------
 const sass = {
-    test: /\.s[ac]ss$/i,
+    test: /\.(css|sass)$/i,
     include: path.resolve(__dirname, 'src/'),
     use: [
         isDev 
         ? 'style-loader' 
-        :{ 
+        :
+        { 
             loader: MiniCssExtractPlugin.loader, 
             options: {
                 hmr: isDev,
@@ -84,6 +85,9 @@ module.exports = {
     devtool: isDev ? 'source-map' : false,
     resolve: {
       extensions: ['.js', '.css'],
+      alias: {
+        modules: path.join(__dirname, "node_modules"),
+      }
     },
     devServer: {
         contentBase: './dist',

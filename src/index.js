@@ -1,2 +1,4 @@
 import './style.sass';
-alert($('.target').html());
+require("jquery-ui/ui/widgets/slider");
+
+
