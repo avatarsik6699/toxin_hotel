@@ -6,4 +6,8 @@ html(lang="en")
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         title Document
     body
-
+        mixin radio(options)
+            label(class="radio")    
+                input(type="radio", name="" class="radio__btn")
+                span(class="radio__name")= options.name
+        +radio({name: "Женщина"})
