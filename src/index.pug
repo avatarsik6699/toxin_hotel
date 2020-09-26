@@ -6,22 +6,4 @@ html(lang="en")
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         title Document
     body
-        h1 Hello world
-        -
-            let list = [
-                'Завтрак', 
-                'Письменный стол', 
-                'Стул для кормления', 
-                'Кроватка', 
-                'Телевизор', 
-                'Шампунь'
-                ]
-        .checkbox-list
-            .checkbox-list__panel
-                span(class="checkbox-list__name") example text
-                span(class="checkbox-list__extend material-icons") keyboard_arrow_down
-            .checkbox-list__fields-wrapper 
-                each category in list  
-                    label.checkbox-list__field   
-                        input(type="checkbox" class="checkbox-list__select")
-                        span(class="checkbox-list__category")= category
+

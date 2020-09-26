@@ -23,7 +23,7 @@ const jsLoader = () => {
 
 // loaders-----------------------------------------------------------
 const sass = {
-    test: /\.(css|sass)$/i,
+    test: /\.(css|sass|scss)$/i,
     include: path.resolve(__dirname, 'src/'),
     use: [
         isDev 
