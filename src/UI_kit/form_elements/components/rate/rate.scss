@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box
+}
+
+
+.rate {
+    display: flex;
+    cursor: pointer;
+}
+
+.rate__star:nth-child(n):not(:last-child) {
+    margin-right: 4px;
+}
+
+.rate__svg {
+    width: 15px;
+    height: 15px;
+}
+
+.rate__svg_selected path {
+    fill: url(#paint0_linear);
+}
