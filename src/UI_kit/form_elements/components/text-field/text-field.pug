@@ -1,0 +1,6 @@
+        mixin text-field(options)
+            if (!options) 
+                -var options = {type: 'text', placeholder: ''}     
+            
+            input.text-field(type=`${options.type || 'text'}` placeholder=`${options.placeholder || ''}`)
+        +text-field({placeholder: '1'}  )    
