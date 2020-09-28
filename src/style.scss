@@ -1,0 +1,22 @@
+@import "~normalize.css";
+@import "~material-icons/iconfont/material-icons.scss";
+@import "./fonts/fonts";
+
+@import "~jquery-ui/themes/base/theme.css";
+@import "~jquery-ui/themes/base/core.css";
+@import "~jquery-ui/themes/base/datepicker.css";
+@import 'air-datepicker/dist/css/datepicker.min.css';
+// @import "~air-datepicker/dist/datepicker.min.css";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box
+}

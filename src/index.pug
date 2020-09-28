@@ -6,20 +6,5 @@ html(lang="en")
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         title Document
     body
-        h1 Hello world
-        -
-            let list = ['спальни', 'кровати', 'ванные комнаты']
-        .dropdown
-            .dropdown__input
-                input(class="dropdown__amount" type="text", name="")
-                span(class="dropdown__extend material-icons") keyboard_arrow_down
-            .dropdown__fields
-                each item in list
-                    .dropdown__field    
-                        span(class="dropdown__category")= item
-                        .dropdown__change-panel    
-                            span(class="dropdown__substract") -
-                            span(class="dropdown__number") 0
-                            span(class="dropdown__add") +
-            
-        img.image(src=require("./images/unnamed.jpg").default)
+        
+        input.calendar(type="text", name="")

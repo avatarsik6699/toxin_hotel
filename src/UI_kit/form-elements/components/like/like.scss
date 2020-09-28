@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box
+}
+
+.like {
+    display: flex;
+    position: relative;
+    background:rgba(31, 32, 65, 0.25);
+    border-radius: 30px;
+    width: 31px;
+    height: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.like__img path {
+    fill: none;
+    stroke: rgba(31, 32, 65, 0.25);
+}
+
+.like__img {
+    width: 8px;
+    height: 8px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.like__amount {
+    color: rgba(31, 32, 65, 0.25);
+    font-family: Montserrat;
+    font-size: 8px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.like:hover {
+    background: linear-gradient(79deg, #bc9cff 0%, #8ba4f9 100%);
+
+    & .like__img path {
+        fill: #BC9CFF;
+        stroke: none;
+    }
+
+    & .like__amount {
+        color: #BC9CFF;
+    }
+}
+
+.like::before {
+    content: "";
+    width: 29px;
+    height: 13px;
+    position: absolute;
+    border-radius: 30px;
+    background: white;
+    left: 1px;
+    top: 1px;
+}
+
+.like_checked {
+    background: linear-gradient(79deg, #bc9cff 0%, #8ba4f9 100%);
+
+    & .like__img path {
+        fill: #BC9CFF;
+        stroke: none;
+    }
+
+    & .like__amount {
+        color: #BC9CFF;
+    }
+}
