@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+.btn-wrapper  {
+    display: inline-block;
+    padding: 2px;
+    border-radius: 22px;
+    margin: 5px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    position: relative;
+
+    &_theme-none {
+        background: transparent;
+    }
+}
+
+.btn {
+    border: transparent;
+    background-color: transparent;
+    
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.4px;
+
+    padding: 5px;
+    border-radius: 22px;
+    width: 77px;
+    
+    &_theme-transparent {
+        background-color: #fff;
+        color: #BC9CFF;
+    }
+
+    &_theme-full {
+        background-color: transparent;
+        color: #fff;
+    }
+
+    &_size-large {
+        width: 252px;
+    }
+
+    &_size-small {
+        width: 77px;
+    }
+
+    &_text_color_purple {
+        color: #BC9CFF;
+    }
+
+    &_text_color_white {
+        color: #FFFFFF;
+    }
+
+    &_text_color_gray {
+        color: rgba(31, 32, 65, 0.5);
+    }
+}
+
+.btn__arrow {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 15px;
+    height: 15px;
+}
+
+.btn-wrapper:hover{
+    opacity: 0.5;
+}
