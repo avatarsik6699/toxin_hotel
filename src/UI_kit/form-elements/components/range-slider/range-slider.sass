@@ -2,6 +2,10 @@
 @import "~jquery-ui/themes/base/core.css"
 @import "~jquery-ui/themes/base/slider.css"
 
+.slider-wrapper
+    width: 214px
+    margin: 5px
+
 .range-slider
     width: 214px !important
     height: 5px !important
@@ -11,11 +15,24 @@
     border-radius: 3px !important
 
 .range-slider__handle
-    width: 10px !important
-    height: 10px !important
+    width: 14px !important
+    height: 14px !important
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%) !important
     border: 2px solid #FFFFFF !important
     border-radius: 10px !important
+    top: -.5em !important
 
 .range-slider__range
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%) !important   
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%) !important
+    top: -1px !important
+    height: 160% !important
+
+.slider__values
+    font-family: Montserrat
+    font-size: 10px
+    letter-spacing: 0.1px
+    text-transform: uppercase
+    color: rgba(31, 32, 65, 0.5)
+    display: block
+    text-align: right
+    padding: 0px 0px 19px 0px
