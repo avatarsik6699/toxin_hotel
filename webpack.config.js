@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { pathToFileURL } = require('url');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -84,9 +85,10 @@ module.exports = {
     },
     devtool: isDev ? 'source-map' : false,
     resolve: {
-      extensions: ['.js', '.css'],
+      extensions: ['.js', '.css', '.scss', '.sass', '.pug'],
       alias: {
-        modules: path.join(__dirname, "node_modules"),
+        FEcomponents: path.resolve(__dirname, 'src/UI_kit/form-elements/components'),
+        root: path.resolve(__dirname, 'src/'),
       }
     },
     devServer: {

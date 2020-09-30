@@ -1,3 +1,4 @@
- label.checkbox   
-            input(type="checkbox" class="checkbox__select")
-            span(class="checkbox__name") Моadasdsasadasd
+mixin checkbox(options)
+    label.checkbox   
+        input(type="checkbox" class="checkbox__select")
+        span(class="checkbox__name")= options.text
