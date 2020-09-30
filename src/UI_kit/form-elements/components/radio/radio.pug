@@ -1,4 +1,7 @@
-mixin radio({name}) 
-            label(class="radio")    
-                input(type="radio", name="" class="radio__btn")
-                span(class="radio__name")= options.name
+mixin radio(options) 
+    if (!options)
+        -var options = {text: 'Пол не определен', name: 'default'}
+        
+    label(class="radio")    
+        input(type="radio", name=`${options.name || 'default'}` class="radio__btn")
+        span(class="radio__name")= options.text
