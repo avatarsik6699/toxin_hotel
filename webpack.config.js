@@ -46,7 +46,7 @@ const sass = {
 const pug = {
     test: /\.pug$/,
     include: path.resolve(__dirname, 'src/'),
-    use: ["pug-loader"]
+    loaders: ['html-loader', 'pug-html-loader'],
 };
 
 const files =  {
@@ -117,6 +117,7 @@ module.exports = {
             template: 'index.pug',
             removeComments: isProd,
             collapseWhiteSpace: isProd,
+            scriptLoading: 'defer',
         }),
         new MiniCssExtractPlugin({
             filename: isProd ? "styles/[name].[contenthash].css" : "[name].css",

@@ -1,0 +1,203 @@
+// $dropdown__input-width: 214px
+// $border-color: 1px solid rgba(31, 32, 65, 0.25)
+// $background-color: #FFFFFF
+// $border-radius: 2px
+// $dropdown__fields-width: $dropdown__input-width
+    
+.dropdown-wrapper {
+    display: inline-flex;
+    width: 272px;
+    justify-content: space-between;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    
+    &::after {
+        content: '';
+        background-image: url('/images/expand.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 30px;
+        right: 12px;
+        z-index: -1;
+    }
+    
+    &__title {
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 9px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+        letter-spacing: 0.4px;
+        margin-bottom: 2px;
+    }
+
+    &__field {
+        width: 256px;
+        height: 36px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 2px;
+        padding: 0 22px 0 10px;
+        background: transparent;
+
+        text-overflow: ellipsis;
+        font-family: Montserrat;
+        font-weight: normal;
+        font-size: 11px;
+        color: rgba(31, 32, 65, 0.75);
+        letter-spacing: 0.1px;
+
+        cursor: pointer;
+
+        &_checked-true {
+            border: 1px solid rgba(31, 32, 65, 0.5);
+        }
+
+        &_size-large {
+            width: 256px;
+        }
+
+        &_size-medium {
+            width: 213px;
+        }
+
+        &_size-small {
+            width: 120px;
+        }
+
+        &::placeholder {
+            font-family: Montserrat;
+            font-weight: normal;
+            font-size: 11px;
+            color: rgba(31, 32, 65, 0.75);
+            letter-spacing: 0.1px;
+        }
+
+        &:hover {
+            border: 1px solid rgba(31, 32, 65, 0.5);
+        }
+    }
+
+    &__items {
+        display: none;
+        width: 213px;
+        background: #FFFFFF;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        border-radius: 2px;
+        padding-left: 11px;
+        padding-right: 5px;
+        padding-top: 3px;
+    }   
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5.5px;
+    }
+
+    &__change-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-basis: 38%;
+    }
+
+    &__category {
+        line-height: 15px;
+        font-size: 9px;
+        color: #1F2041;
+        font-family: Montserrat;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }          
+
+    &__substract {
+        width: 24px;
+        height: 24px;
+        font-family: Montserrat;
+        font-size: 9px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 22px;
+        color: rgba(31, 32, 65, 0.5);
+    }
+     
+
+    &__number {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 9px;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #1F2041;
+    }
+    
+
+    &__add {
+        width: 24px;
+        height: 24px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 22px;
+        font-family: Montserrat;
+        font-size: 11px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(31, 32, 65, 0.5);
+    }
+
+}
+
+.datepicker__date-type_filter {
+    top: 5px !important;
+    left: 0px !important; 
+}
+
+.datepicker__date-type_from-to {
+    width: 255px !important;
+    top: 56px !important;
+    left: -272px !important;
+}
+   
+
+//     & .dropdown__amount
+//         width: 128px
+//         height: 24px
+//         font-family: Montserrat
+//         font-style: normal
+//         font-weight: normal
+//         font-size: 11px
+//         line-height: 24px
+//         color: rgba(31, 32, 65, 0.75)
+//         overflow: hidden
+//         text-overflow: ellipsis
+//         border: none
+//         letter-spacing: 0.1px
+    
+//     & .dropdown__extend 
+//         height: 89%
+//         font-style: normal
+//         font-weight: normal
+//         font-size: 20px
+//         line-height: 22px
+//         color: rgba(31, 32, 65, 0.75)
+//         text-align: center
+//         display: flex
+//         align-items: center
+//         justify-content: center
+//         cursor: pointer

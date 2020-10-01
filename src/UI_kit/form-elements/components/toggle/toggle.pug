@@ -1,7 +1,7 @@
 mixin toggle(options) 
     .switch 
         label.switch__btn
-            input.switch__checkbox(type="checkbox")
+            input.switch__checkbox(type="checkbox" checked=`${options.checked || false}`)
             span.switch__handle
         span.switch__text= options.text 
         

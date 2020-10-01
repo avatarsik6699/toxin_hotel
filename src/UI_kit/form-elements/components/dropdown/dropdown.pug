@@ -1,14 +1,34 @@
-        -
-            let list = ['спальни', 'кровати', 'ванные комнаты']
-        .dropdown
-            .dropdown__input
-                input(class="dropdown__amount" type="text", name="")
-                span(class="dropdown__extend material-icons") keyboard_arrow_down
-            .dropdown__fields
+mixin dropdown(options)
+    -
+        if (!options)
+            var options = {size: 'small', type: 'default', placeholder: 'Текст', title: "text"}
+        let className = `dropdown__field dropdown__field_size-${options.size}`
+        let list = ['спальни', 'кровати', 'ванные комнаты']
+
+    -if(options.type === 'default')
+        .dropdown(data-type="default")
+            span(class="dropdown__title")= options.title
+            input(class=className type="text", name="" placeholder=options.placeholder)
+            .dropdown__items
                 each item in list
-                    .dropdown__field    
+                    .dropdown__item   
                         span(class="dropdown__category")= item
                         .dropdown__change-panel    
                             span(class="dropdown__substract") -
                             span(class="dropdown__number") 0
                             span(class="dropdown__add") +
+
+
+    -if(options.type === 'filter')
+        .dropdown(data-type="filter")
+            span(class="dropdown__title")= options.title
+            input(class=className type="text", name="" placeholder=options.placeholder)
+
+    -if(options.type === 'date')
+        .dropdown-wrapper(data-type="date")
+            div(class="dropdown dropdown_to" data-type="date_from")
+                span(class="dropdown__title")= options.title
+                input(class=className type="text", name="" placeholder=options.placeholder data-date="from" autocomplete="off")
+            div(class="dropdown dropdown_from" data-type="date_to")
+                span(class="dropdown__title")= options.title
+                input(class=className type="text", name="" placeholder=options.placeholder data-date="to" autocomplete="off")
