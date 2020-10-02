@@ -16,8 +16,8 @@
     position: relative;
     background:rgba(31, 32, 65, 0.25);
     border-radius: 30px;
-    width: 31px;
-    height: 15px;
+    width: 31.9px;
+    height: 15.9px;;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
@@ -40,6 +40,7 @@
     font-family: Montserrat;
     font-size: 8px;
     z-index: 1;
+    padding-right: 3px;
     cursor: pointer;
 }
 
@@ -58,8 +59,8 @@
 
 .like::before {
     content: "";
-    width: 29px;
-    height: 13px;
+    width: 30px;
+    height: 14px;
     position: absolute;
     border-radius: 30px;
     background: white;
