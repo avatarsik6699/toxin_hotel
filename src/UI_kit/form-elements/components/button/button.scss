@@ -13,9 +13,8 @@
 
 .btn-wrapper  {
     display: inline-block;
-    padding: 2px;
+    // padding: 2px;
     border-radius: 22px;
-    margin: 5px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     position: relative;
 
@@ -40,6 +39,8 @@
     padding: 5px;
     border-radius: 22px;
     width: 77px;
+
+    cursor: pointer;
     
     &_theme-transparent {
         background-color: #fff;
@@ -49,6 +50,10 @@
     &_theme-full {
         background-color: transparent;
         color: #fff;
+    }
+
+    &_theme-none  {
+        line-height: 0;
     }
 
     &_size-large {

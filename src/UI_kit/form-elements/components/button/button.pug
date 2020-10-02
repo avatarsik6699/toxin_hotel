@@ -1,18 +1,14 @@
-        mixin button(options)
-            -
-                let classWrapper = "btn-wrapper"
-                let classBtn = "btn"
-                classWrapper += options.theme === "none" ? " btn-wrapper_theme-none" : ""
-                classBtn += ` btn_theme-${options.theme || "default"} btn_size-${options.size || "default"} btn_text_color_${options.textColor || "default"}`
-            
-            div(class=classWrapper)   
-                input(value=options.text type="submit" class=classBtn)
-                if (options.arrow)
-                    svg(class="btn__arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white")
-
-        +button({theme: 'full', size: 'small', arrow: false, text: 'click me', textColor: 'white'})
-        +button({theme: 'transparent', size: 'small', arrow: false, text: 'click me', textColor: 'purple'})
-        +button({theme: 'none', size: 'small', arrow: false, text: 'click me', textColor: 'purple'})
-        +button({theme: 'none', size: 'small', arrow: false, text: 'click me', textColor: 'gray'})
-        +button({theme: 'full', size: 'large', arrow: true, text: 'перейти к оплате', textColor: 'whtie'})
+mixin button(options)
+    -
+        if (!options)
+            var options = {theme: 'transparent', size: 'small', arrow: false, text: 'click me', textColor: 'purple'}
+        let classWrapper = "btn-wrapper"
+        let classBtn = "btn"
+        classWrapper += options.theme === "none" ? " btn-wrapper_theme-none" : ""
+        classBtn += ` btn_theme-${options.theme || "default"} btn_size-${options.size || "default"} btn_text_color_${options.textColor || "default"}`
+    
+    div(class=classWrapper)   
+        input(value=options.text type="submit" class=classBtn)
+        if (options.arrow)
+            svg(class="btn__arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white")

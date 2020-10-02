@@ -1,8 +1,4 @@
-// $dropdown__input-width: 214px
-// $border-color: 1px solid rgba(31, 32, 65, 0.25)
-// $background-color: #FFFFFF
-// $border-radius: 2px
-// $dropdown__fields-width: $dropdown__input-width
+@import "../button/button";
     
 .dropdown-wrapper {
     display: inline-flex;
@@ -14,6 +10,7 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
+    margin: 20px;
     
     &::after {
         content: '';
@@ -58,6 +55,8 @@
 
         &_checked-true {
             border: 1px solid rgba(31, 32, 65, 0.5);
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
         }
 
         &_size-large {
@@ -94,6 +93,21 @@
         padding-left: 11px;
         padding-right: 5px;
         padding-top: 3px;
+        border-top: transparent;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        
+        &_display-true {
+            display: block;
+        }
+
+        &_size-large {
+            width: 256px;
+        }
+
+        &_size-medium {
+            width: 213px;
+        }
     }   
 
     &__item {
@@ -132,6 +146,12 @@
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 22px;
         color: rgba(31, 32, 65, 0.5);
+        cursor: pointer;
+
+        &_disabled-true {
+            cursor: not-allowed;
+            opacity: .5;
+        }
     }
      
 
@@ -159,6 +179,32 @@
         align-items: center;
         justify-content: center;
         color: rgba(31, 32, 65, 0.5);
+        cursor: pointer;
+    }
+
+    &__buttons-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        
+        &_justify-content_space-between {
+            justify-content: space-between;
+        }
+    }
+
+    &__btn-clear {
+        margin-left: -11px;
+        display: none;
+
+        &_display-true {
+            display: none;
+        }
+    }
+
+    &__btn-apply {
+        margin-right: -5px;
+        z-index: 10;
     }
 
 }
