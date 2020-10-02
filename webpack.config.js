@@ -46,7 +46,7 @@ const sass = {
 const pug = {
     test: /\.pug$/,
     include: path.resolve(__dirname, 'src/'),
-    loaders: ['html-loader', 'pug-html-loader'],
+    loaders: ['pug-loader'],
 };
 
 const files =  {
