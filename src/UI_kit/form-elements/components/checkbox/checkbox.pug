@@ -1,4 +1,6 @@
-mixin checkbox(options)
-    label.checkbox   
+mixin checkbox(options = {text: 'default', weight: 'bold'})
+    label.checkbox
+        -
+            let class__name = `checkbox__name checkbox__name_font_weight-${options.weight}`;     
         input(type="checkbox" class="checkbox__select")
-        span(class="checkbox__name")= options.text
+        span(class=class__name)= options.text

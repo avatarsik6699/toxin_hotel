@@ -49,5 +49,9 @@
         width: 166px;
         overflow-wrap: break-word;   
         letter-spacing: 0.1px;
+
+        &_font_weight-bold {
+            font-weight: 700;
+        }
     }
 }

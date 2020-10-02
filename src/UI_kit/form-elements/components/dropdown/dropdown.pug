@@ -2,7 +2,7 @@ include ../button/button
 mixin dropdown(options)
     -
         if (!options)
-            var options = {size: 'small', type: 'default', placeholder: 'Текст', title: "text"}
+            var options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false}
         let className = `dropdown__field dropdown__field_size-${options.size}`
         let list = ['спальни', 'кровати', 'ванные комнаты']
 
