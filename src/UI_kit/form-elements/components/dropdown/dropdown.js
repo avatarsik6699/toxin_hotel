@@ -45,7 +45,7 @@ class Dom {
 // нужно задавать начальное значение)
 
 
-class Dropdown {
+export class Dropdown {
     constructor(selector, customOptions = {}, type = null, dom = new Dom) {
         this.dom = dom;
         this.selector = selector ?? this.dom.getSelector();
@@ -359,16 +359,5 @@ class Dropdown {
         this.fieldData = {
             ...this.initialFieldData
         };
-  
-
     }
-
 }
-
-let one = new Dropdown('div[data-id="1"]', {
-
-});
-
-let second = new Dropdown('div[data-id="2"]', {
-
-});
