@@ -1,0 +1,13 @@
+mixin room-details(options = {categories: [], descriptions: [], images: []})
+    -
+        let images = ["insert_emoticon", "location_city"]
+        let categories = ["Комфорт", "Удобство"]
+        let descriptions = ["Шумопоглощающие стены", "Окно в каждой из спален"]
+
+    .room-details
+        each img, index in images
+            .room-details__detail
+                img.room-details__img(src=require(`root/images/${img}.svg`).default)
+                .room-details__info
+                    span.room-details__category= categories[index]
+                    span.room-details__description= descriptions[index]

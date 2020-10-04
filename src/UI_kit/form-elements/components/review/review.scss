@@ -1,0 +1,67 @@
+@import 'FEcomponents/like/like';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    max-width: 570px;
+
+    &__user {
+        display: flex;
+        margin-bottom: 7px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-left: 6px;
+        padding-top: 3px;
+    }
+
+    &__description {
+        display: flex;
+        padding-left: 3px;
+    }
+
+    &__name {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(31, 32, 65, 0.75);
+        letter-spacing: -0.5px;
+    }
+
+    &__time {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 25px;
+        color: rgba(31, 32, 65, 0.75);
+        letter-spacing: -0.5px;
+    }
+
+    &__comment {
+        font-family: Montserrat;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 18.5px;
+        color: rgba(31, 32, 65, 0.75);
+        letter-spacing: 0.11px;
+        padding-left: 12px;
+    }
+}

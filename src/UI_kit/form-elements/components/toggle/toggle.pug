@@ -1,5 +1,7 @@
-     div    
-            label.switch
-                input.checkbox(type="checkbox")
-                span.slider
-            span switch 1
+mixin toggle(options) 
+    .switch 
+        label.switch__btn
+            input.switch__checkbox(type="checkbox" checked=`${options.checked || false}`)
+            span.switch__handle
+        span.switch__text= options.text 
+        

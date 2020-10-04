@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+.pagination {
+    width: 193px;
+}
+
+.pagination__pages {
+    display: flex;
+}
+
+.pagination__page {
+    width: 32px;
+    height: 32px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    color: rgba(31, 32, 65, 0.5);
+
+    &_current {
+        color: #FFFFFF;
+        font-weight: bold;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-radius: 22px;
+    }
+}
+
+.pagination__next {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+    border: transparent;    
+}
+
+.pagination__arrow {
+    fill: #fff;
+    width: 26px;
+    height: 24px;
+}
+
+.pagination__total {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    letter-spacing: 0.1px;
+    padding: 4px 0 0 0;
+    text-align: center;
+}

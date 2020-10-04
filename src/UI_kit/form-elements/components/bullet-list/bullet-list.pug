@@ -1,0 +1,11 @@
+mixin bullet-list(options = {items: [], title: "bullet list"})
+    -
+        let items = options.items 
+        ? options.items 
+        : ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+    
+    .bullet-list
+        span.bullet-list__title= options.title
+        ul.bullet-list__items
+            each item in items
+                li.bullet-list__item= item

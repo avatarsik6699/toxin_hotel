@@ -1,14 +1,40 @@
-        -
-            let list = ['спальни', 'кровати', 'ванные комнаты']
-        .dropdown
-            .dropdown__input
-                input(class="dropdown__amount" type="text", name="")
-                span(class="dropdown__extend material-icons") keyboard_arrow_down
-            .dropdown__fields
+include ../button/button
+mixin dropdown(options)
+    -
+        if (!options)
+            var options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false}
+        let className = `dropdown__field dropdown__field_size-${options.size}`
+        let list = ['спальни', 'кровати', 'ванные комнаты']
+
+    -if(options.type === 'default')
+        .dropdown(data-type="default")
+            span(class="dropdown__title")= options.title
+            input(class=className type="text", name="" placeholder=options.placeholder data-field autocomplete="off" readonly)
+            .dropdown__items(class=`dropdown__items_size-${options.size}`)
                 each item in list
-                    .dropdown__field    
+                    .dropdown__item   
                         span(class="dropdown__category")= item
                         .dropdown__change-panel    
-                            span(class="dropdown__substract") -
+                            span(class="dropdown__substract dropdown__substract_disabled-true" data-change="sub") -
                             span(class="dropdown__number") 0
-                            span(class="dropdown__add") +
+                            span(class="dropdown__add" data-change="add") +
+                -if(options.buttons)
+                    .dropdown__buttons-wrapper                
+                        .dropdown__btn-clear
+                            +button({theme: 'none', size: 'small', arrow: false, text: 'очистить', textColor: 'gray'})
+                        .dropdown__btn-apply
+                            +button({theme: 'none', size: 'small', arrow: false, text: 'применить', textColor: 'purple'})
+                
+    -if(options.type === 'filter')
+        .dropdown(data-type="filter")
+            span(class="dropdown__title")= options.title
+            input(class=className type="text", name="" placeholder=options.placeholder autocomplete="off"  readonly)
+
+    -if(options.type === 'date')
+        .dropdown-wrapper(data-type="date")
+            div(class="dropdown dropdown_to" data-type="date_from")
+                span(class="dropdown__title")= options.title
+                input(class=className type="text", name="" placeholder=options.placeholder data-date="from" autocomplete="off" readonly)
+            div(class="dropdown dropdown_from" data-type="date_to")
+                span(class="dropdown__title")= options.title
+                input(class=className type="text", name="" placeholder=options.placeholder data-date="to" autocomplete="off" readonly)

@@ -11,22 +11,38 @@
     box-sizing: border-box
 }
 
-.text-field {
-    margin: 10px;
+.field {
     width: 256px;
+    position: relative;
+
+    &_size_large{
+        width: 256px;
+    }
+
+    &_size_medium{
+        width: 215px;
+    }
+}
+
+.text-field {
+    width: 100%;
     height: 36px;
     background: #FFFFFF;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     padding-left: 11px;
-    padding-right: 11px;
+    padding-right: 30px;
     text-overflow: ellipsis;
     outline: none;
 
     font-family: Montserrat;
     font-size: 12px;
     line-height: 18px;
-    color: rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+
+    // &_type_subscription {
+
+    // }
 }
 
 .text-field::placeholder {
@@ -44,4 +60,12 @@
 .text-field:hover {
     border: 1px solid rgba(31, 32, 65, 0.5);
     color: rgba(31, 32, 65, 0.75);
+}
+
+.field__arrow {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: 14px;
+    height: 15px;
 }
