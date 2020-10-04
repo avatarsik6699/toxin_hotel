@@ -30,7 +30,7 @@
     font-family: Montserrat;
     font-weight: bold;
     font-size: 9px;
-    line-height: 21px;
+    line-height: 24px;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -57,7 +57,8 @@
     }
 
     &_size-large {
-        width: 252px;
+        width: 256px;
+        padding: 6px 9px 5px 5px;
     }
 
     &_size-small {

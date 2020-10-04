@@ -1,63 +1,34 @@
-import { parse } from 'path';
 import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar'
-
-const dropdown = document.querySelector('div[data-type]');
-
-if (dropdown.dataset.type === 'date') {
-    const from = dropdown.querySelector('[data-date="from"]');
-    const to = dropdown.querySelector('[data-date="to"]');
-    
-    new Calendar('.dropdown-wrapper', {
-        classes: 'datepicker__date-type_from-to',
-        onSelect(formattedDate) {
-            from.value = formattedDate.split('-')[0] ?? '';
-            to.value = formattedDate.split('-')[1] ?? '';
-        }
-    })
-}
-
-if (dropdown.dataset.type === 'filter') {
-    new Calendar('.dropdown__field', {
-        dateFormat: 'dd M',
-        classes: 'datepicker__date-type_filter',
-        multipleDatesSeparator: ' - ',
-    });
-}
-
-
-// if (dropdown.dataset.type === 'default') {
-//     const items = document.querySelector('.dropdown__items')
-//     const field = dropdown.querySelector('.dropdown__field')
-//     console.log(items)
-//     field.addEventListener('click', (e) => {
-//             field.classList.toggle('dropdown__field_checked-true');
-//             items.classList.toggle('dropdown__items_dispay-true')     
-//     })
-    
-// }
 
 class Dom {
     constructor() {}
     
-    getNode(selector, areaSelector = document) {
-        if (typeof areaSelector === 'string') {
-            const root = document.querySelector(areaSelector);
+    getSelector() {
+        for (let i = 0; i <= 100; i++ ) {
+            isElementExist = document.querySelector(`div[data-id=${i}]`);
+            if (isElementExist) {
+                return `div[data-id=${i}]`;
+            }
+        }
+    }
+
+    getType(selector) {
+        let el = document.querySelector(selector);
+        if (!el) throw new Error('Неправильно передан "data-type"');
+        return el.dataset.type;
+    }
+
+    getNode(area = document,  selector) {
+        if (typeof area === 'string' || area === null) {
+            const root = document.querySelector(area);
             return root.querySelector(selector);
         } else {
-           return areaSelector.querySelector(selector); 
+           return area.querySelector(selector); 
         }
-        
     }
 
     setDataAttribute(domElement, value) {
         domElement.setAttribute('data-button', value);
-    }
-
-    hasDataAttribue(e) {
-        for(let el in e.target.dataset) {
-            if (el) return true;
-        }
-        return false;
     }
 
     getElement(event, tag) {
@@ -75,11 +46,39 @@ class Dom {
 
 
 class Dropdown {
-    constructor(domDropdown, customOptions = {}, dom = new Dom) {
+    constructor(selector, customOptions = {}, type = null, dom = new Dom) {
         this.dom = dom;
+        this.selector = selector ?? this.dom.getSelector();
+        this.type = type ?? this.dom.getType(selector);
+        this.typeList = ['filter', 'date']
+        this.sumNumberValue = 0;
+        
+        // dom nodes--------------------------------------------------
+        this.dropdown = this.dom.getNode(document, this.selector);
+            if(this.type === 'default') {
+                this.field = this.setNode('field')
+                this.items = this.setNode('items')
+
+                if (this.hasButtons()) {
+                    // нет прямого доступа к кнопкам из html
+                    // поэтому data-attrubutes устанавливаем ч/з js
+                    this.dom.setDataAttribute(
+                        this.dom.getNode('.dropdown__btn-clear','.btn'), 
+                        'clear')
+
+                    this.dom.setDataAttribute(
+                        this.dom.getNode('.dropdown__btn-apply','.btn'), 
+                        'apply')
+                }
+            }
+
+            if (this.type === 'filter') {
+                this.field = this.dropdown.querySelector('.dropdown__field');
+                // console.log(this.setNode('field'));
+            }
+
         // options ---------------------------------------------------
         this.defaultOptions = {
-            type: 'with-buttons',
             exceptions: ['взрослые', 'дети','спальни', 'кровати'],
             exceptionDeclension: 'гости',   
             declensions: {
@@ -89,55 +88,77 @@ class Dropdown {
                 'гости': ['гость', 'гостя', 'гостей']
             }
         };
+
+        this.options = {
+            ...this.defaultOptions,
+            ...customOptions
+        }
         
-        this.fieldData = {
+        this.initialFieldData = {
             'гости': 0,
-        };
-
-        // dom nodes--------------------------------------------------
-        this.dropdown = this.dom.getNode(domDropdown);
-        this.field = this.dropdown.querySelector('.dropdown__field');
-        this.items = this.dropdown.querySelector('.dropdown__items');
-        
-
-        // buttons----------------------------------------------------
-        if (this.defaultOptions.type === 'with-buttons') {
-            this.dom.setDataAttribute(dom.getNode('.btn', '.dropdown__btn-clear'), 'clear')
-            this.dom.setDataAttribute(dom.getNode('.btn', '.dropdown__btn-apply'), 'apply')
         }
 
-        // events-------
+        this.fieldData = {
+            ...this.initialFieldData
+        };
+
+        // events-----------------------------------------------------
         this.bindEvent();
     
     }
 
     bindEvent() {
-        document.addEventListener('click', this.handleEvent)
+        if (this.typeList.includes(this.type)) {
+            this[`${this.type}Handler`]();
+        } else {
+            document.addEventListener('click', this.hide.bind(this))
+            this.dropdown.addEventListener('click', this.handleEvent);
+        }
+    }
+
+    setNode(node) {
+        return this.dom.getNode(this.dropdown, `.dropdown__${node}`);
     }
 
     handleEvent = (e) => {
-        if (!this.clickInDropdown(e)) { this.hide() };
-        
-        if(!this.dom.hasDataAttribue(e)) return;
-        
-        let eventType = this.getDataType(e)[0].toUpperCase() + this.getDataType(e).slice(1);
-        let funcName = "event" + eventType;
+        e.stopPropagation();
+
+        if (!this.clickOnEventElment(e)) return
+
+        let funcName = this.getFuncName(e);
+            console.log(funcName)
         this[funcName](e)
-
-        // const isBtnEvent = e.target.closest('div[data-event]').dataset.event;
-        // if (isBtnEvent === 'apply') {
-        //     this.toggle();
-        // }
-
-        // if (isBtnEvent === 'clear') {
-        //     console.log('clear');
-        // }
-
-        // const isBtnChange = e.target.dataset.change;
-        // if (!isBtnChange) return;
-
     }
 
+    getFuncName(e) {
+        let eventType = this.getEventType(e)[0].toUpperCase() + this.getEventType(e).slice(1)
+        return `event${eventType}`
+    }
+
+    // Calendar events-------------------------------------------------
+    dateHandler() {
+        const from = this.dropdown.querySelector('[data-time="from"]');
+        const to = this.dropdown.querySelector('[data-time="to"]');
+        
+        new Calendar(this.dropdown, {
+            classes: 'datepicker__date-type_from-to',
+            onSelect(formattedDate) {
+                from.value = formattedDate.split('-')[0] ?? '';
+                to.value = formattedDate.split('-')[1] ?? '';
+            }
+        })
+    }
+
+    filterHandler() {
+            new Calendar(this.field, {
+                dateFormat: 'dd M',
+                classes: 'datepicker__date-type_filter',
+                multipleDatesSeparator: ' - ',
+            });
+            // this.added = true;
+    }
+
+    // Default events----------------------------------------
     eventField(e) {
         this.toggle();
     }
@@ -148,22 +169,67 @@ class Dropdown {
         const category = this.dom.getElement(e, '.dropdown__category');
         const number = this.dom.getElement(e, '.dropdown__number');
 
-        if (e.target.dataset.change === 'add') {
+        if (this.getEventValue(e) === 'add') {
+            this.sumNumberValue += 1;
             this.add(number, this.field, category.innerHTML);
             this.btnDisabled(false, btnSub);
-            return;
         }
 
-        if (e.target.dataset.change === 'sub') {
+        if (this.getEventValue(e) === 'sub') {
             if (this.isNumberZero(number)) return;
+            this.sumNumberValue -= 1;
             this.sub(number, btnSub, this.field, category.innerHTML);
-            return;
+        }
+
+        // hide/display clear button
+        this.displayClearButton(e);
+    }
+    
+    addClass(area, element, className) {
+        this.dom.getNode(area, element)
+        .classList
+        .add(className);
+    }
+
+    removeClass(area, element, className) {
+        this.dom.getNode(area, element)
+        .classList
+        .remove(className);
+    }
+
+    displayClearButton() {
+        if ( this.sumNumberValue !== 0 && this.hasButtons() ) {
+            this.addClass(
+                this.dropdown, 
+                '.dropdown__buttons-wrapper',
+                'dropdown__buttons-wrapper_justify-content_space-between')
+
+            this.addClass(
+                this.dropdown, 
+                '.dropdown__btn-clear',
+                'dropdown__btn-clear_display-true')
+        } 
+        
+        if ( this.sumNumberValue === 0 && this.hasButtons() ) {
+            this.removeClass(
+                this.dropdown, 
+                '.dropdown__buttons-wrapper',
+                'dropdown__buttons-wrapper_justify-content_space-between')
+            
+            this.removeClass(
+                this.dropdown, 
+                '.dropdown__btn-clear',
+                'dropdown__btn-clear_display-true')
         }
     }
 
     eventButton(e) {
-        if (e.target.dataset.button === 'apply') {
+        if (this.getEventValue(e) === 'apply') {
             this.hide();
+        }
+
+        if (this.getEventValue(e) === 'clear') {
+            this.reset(e);
         }
     }
 
@@ -174,6 +240,7 @@ class Dropdown {
     }
 
     sub(number, btn, field, category) {
+        console.log(btn);
         number.innerHTML = Number(number.innerHTML) - 1;
 
         this.changeField(number, this.field, category, 'sub')
@@ -238,40 +305,32 @@ class Dropdown {
         }
     }
 
-    clickInDropdown(e) {
-        return e.target.closest('.dropdown');
+    clickOnEventElment(e) {
+        for (let event in e.target.dataset) {
+            if (event) return true;
+        }
+        return false;
     }
 
-    getDataType(e) {
-        for(let data in e.target.dataset) {
+    getEventType(e) {
+        for (let data in e.target.dataset) {
             return data;
         }
     }
 
-    deepExtendOptions(...out) {
-        for (let obj of out ) {
-            if (!obj) continue;
-
-            for (let key in obj) {
-                if (obj.hasOwnProperty(key)) {
-                    if (typeof obj[key] === 'object') {
-                        if (Array.isArray(obj[key])) {
-                            out[key] = obj[key].slice(0);
-                        } else {
-                            out[key] = deepExtend(out[key], obj[key]);
-                        }
-                    }
-                } else {
-                    out[key] = obj[key];
-                }
-            }
+    getEventValue(e) {
+        for (let data in e.target.dataset) {
+            return e.target.dataset[data];
         }
+    }
 
-        return out;
+    hasButtons() {
+        return this.dom.getNode(this.dropdown, '.dropdown__buttons-wrapper');
     }
 
     hide() {
         this.items.classList.remove('dropdown__items_display-true'); 
+        this.field.classList.remove('dropdown__field_checked-true');
     }
 
     open() {
@@ -280,39 +339,36 @@ class Dropdown {
 
     toggle() {
         this.items.classList.toggle('dropdown__items_display-true');
+        this.field.classList.toggle('dropdown__field_checked-true');
+    }
+
+    reset(e) {
+        
+        this.field.value = '';
+
+        const btnSubList = this.items.querySelectorAll('span.dropdown__substract');
+        const numberList = this.items.querySelectorAll('span.dropdown__number');
+
+        Array.from(numberList).forEach( (number, index) => {
+            number.innerHTML = 0;
+            this.btnDisabled(true, btnSubList[index]); 
+        })
+        this.sumNumberValue = 0;
+        this.fieldData = {};
+        this.displayClearButton();
+        this.fieldData = {
+            ...this.initialFieldData
+        };
+  
+
     }
 
 }
 
-new Dropdown('.dropdown', {
+let one = new Dropdown('div[data-id="1"]', {
 
 });
 
-function deepExtendOptions(...out) {
-    
-    for (let obj of out ) {
-        if (!obj) continue;
+let second = new Dropdown('div[data-id="2"]', {
 
-        for (let key in obj) {
-            if (obj.hasOwnProperty(key)) {
-                if (typeof obj[key] === 'object') {
-                    if (Array.isArray(obj[key])) {
-                        out[key] = obj[key].slice(0);
-                    } else {
-                        out[key] = deepExtend(out[key], obj[key]);
-                    }
-                }
-            } else {
-                out[key] = obj[key];
-            }
-        }
-    }
-
-    return out;
-}
-
-function func(...options) {
-    console.log(Object.fromEntries(Object.entries(options)));
-}
-func({}, {a:1, b:5}, {a:2, });
-console.log(deepExtendOptions({}, {a:1, b:5}, {a:2, }));
+});

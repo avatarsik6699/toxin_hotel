@@ -1,5 +1,5 @@
 @import "../button/button";
-    
+@import "/UI_kit/cards/components/calendar/calendar";
 .dropdown-wrapper {
     display: inline-flex;
     width: 272px;
@@ -10,7 +10,6 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    margin: 20px;
     
     &::after {
         content: '';
@@ -96,6 +95,9 @@
         border-top: transparent;
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
+        position: absolute;
+        top: 52.5px;
+        z-index: 999;
         
         &_display-true {
             display: block;
@@ -198,7 +200,7 @@
         display: none;
 
         &_display-true {
-            display: none;
+            display: block;
         }
     }
 

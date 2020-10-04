@@ -1,0 +1,38 @@
+@import 'FEcomponents/dropdown/dropdown';
+
+.find-room {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-width: 304px;
+    padding: 29px 26px 10px 22px;
+    margin: 20px;
+
+    &__title {
+        font-family: Montserrat, Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 25px;
+        color: #1F2041;
+        letter-spacing: -0.8px;
+        margin-bottom: 14px;
+    }
+
+    &__dates {
+        padding-left: 1px;
+        margin-bottom: 15px;
+    }
+
+    &__guests {
+        padding-left: 1px;
+        margin-bottom: 25px;
+    }
+
+    &__find {
+        padding-left: 1px;
+        margin-bottom: 13px;
+    }
+}
