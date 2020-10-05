@@ -1,5 +1,5 @@
 include ../button/button
-mixin dropdown(options)
+mixin dropdown(options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false})
     -
         if (!options)
             var options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false}
@@ -7,7 +7,7 @@ mixin dropdown(options)
         let list = ['спальни', 'кровати', 'ванные комнаты']
 
     -if(options.type === 'default')
-        .dropdown(data-type="default")
+        .dropdown(data-type="default" data-id=options.id)
             span(class="dropdown__title")= options.title
             input(class=className type="text", name="" placeholder=options.placeholder data-field autocomplete="off" readonly)
             .dropdown__items(class=`dropdown__items_size-${options.size}`)
@@ -26,15 +26,15 @@ mixin dropdown(options)
                             +button({theme: 'none', size: 'small', arrow: false, text: 'применить', textColor: 'purple'})
                 
     -if(options.type === 'filter')
-        .dropdown(data-type="filter")
+        .dropdown(data-type="filter" data-id=options.id)
             span(class="dropdown__title")= options.title
             input(class=className type="text", name="" placeholder=options.placeholder autocomplete="off"  readonly)
 
     -if(options.type === 'date')
-        .dropdown-wrapper(data-type="date")
+        .dropdown-wrapper(data-type="date" data-id=options.id)
             div(class="dropdown dropdown_to" data-type="date_from")
-                span(class="dropdown__title")= options.title
-                input(class=className type="text", name="" placeholder=options.placeholder data-date="from" autocomplete="off" readonly)
+                span(class="dropdown__title")= options.title[0]
+                input(class=className type="text", name="" placeholder=options.placeholder data-time="from" autocomplete="off" readonly)
             div(class="dropdown dropdown_from" data-type="date_to")
-                span(class="dropdown__title")= options.title
-                input(class=className type="text", name="" placeholder=options.placeholder data-date="to" autocomplete="off" readonly)
+                span(class="dropdown__title")= options.title[1]
+                input(class=className type="text", name="" placeholder=options.placeholder data-time="to" autocomplete="off" readonly)

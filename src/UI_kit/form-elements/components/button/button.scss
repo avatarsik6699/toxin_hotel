@@ -13,10 +13,10 @@
 
 .btn-wrapper  {
     display: inline-block;
-    // padding: 2px;
     border-radius: 22px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     position: relative;
+    padding: 2px;
 
     &_theme-none {
         background: transparent;
@@ -30,7 +30,7 @@
     font-family: Montserrat;
     font-weight: bold;
     font-size: 9px;
-    line-height: 21px;
+    line-height: 22px;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -44,12 +44,10 @@
     
     &_theme-transparent {
         background-color: #fff;
-        color: #BC9CFF;
     }
 
     &_theme-full {
         background-color: transparent;
-        color: #fff;
     }
 
     &_theme-none  {
@@ -57,7 +55,7 @@
     }
 
     &_size-large {
-        width: 252px;
+        width: 250px;
     }
 
     &_size-small {

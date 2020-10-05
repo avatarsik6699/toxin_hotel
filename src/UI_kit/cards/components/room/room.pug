@@ -1,0 +1,22 @@
+include UI_kit/form-elements/components/button/button
+include UI_kit/form-elements/components/rate/rate
+mixin room(options = {type: true})
+    .room
+        .room__preview
+            img.room__preview-img(src=require("root/images/room_1.jpg").default, alt="room img")
+        .room__info
+            .room__number
+                span.room__info-icon №
+                |888
+            -if(options.type)
+                .room__type
+                    +button({theme: "none", text: "люкс", textColor: "purple", size: "small"})
+            .room__price
+                |9 990₽ 
+                span.room__price-time в сутки
+        .room__characteristic
+            .room__rate
+                +rate({amount: 5, fill: 5})
+            .room__review
+                span.room__review-number 145
+                span.room__review-text Отзывов

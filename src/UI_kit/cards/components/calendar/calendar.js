@@ -48,10 +48,9 @@ export class Calendar {
     }
 
     clickInCalendar(e) {
-        if (document.querySelector(this.anchor).tagName !== 'DIV') {
+        if ($(this.anchor).prop("tagName") !== 'DIV') {
             return e.target.closest('[class^="datepicker"]');
         } else {
-            console.log(1);
            return e.target.matches('[class^="datepicker"]'); 
         }
     }
