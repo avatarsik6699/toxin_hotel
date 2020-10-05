@@ -1,11 +1,11 @@
-mixin button(options = {theme: "transparent", size: "small", arrow: false, text: "создать", textColor: "purple"})
+mixin button(options = {theme: "transparent", size: "small", arrow: false, text: "создать", textColor: "purple", height: "default"})
     -
         if (!options)
             var options = {theme: 'transparent', size: 'small', arrow: false, text: 'click me', textColor: 'purple'}
         let classWrapper = "btn-wrapper"
         let classBtn = "btn"
         classWrapper += options.theme === "none" ? " btn-wrapper_theme-none" : ""
-        classBtn += ` btn_theme-${options.theme || "default"} btn_size-${options.size || "default"} btn_text_color_${options.textColor || "default"}`
+        classBtn += ` btn_theme-${options.theme || "default"} btn_size-${options.size || "default"} btn_text_color_${options.textColor || "default"} btn_height-${options.height || 'default'}`
     
     div(class=classWrapper)   
         input(value=options.text type="submit" class=classBtn)

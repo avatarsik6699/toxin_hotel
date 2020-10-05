@@ -58,8 +58,20 @@
         width: 250px;
     }
 
+    &_size-medium {
+        width: 153px;
+    }
+
     &_size-small {
         width: 77px;
+    }
+
+    &_size-smaller {
+        width: 67px;
+    }
+
+    &_height-medium {
+        line-height: 13px;
     }
 
     &_text_color_purple {
