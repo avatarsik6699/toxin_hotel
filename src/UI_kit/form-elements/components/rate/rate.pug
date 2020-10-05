@@ -1,4 +1,4 @@
-mixin rate(options)
+mixin rate(options = {amount: 5, fill: 5})
     .rate
         -let amount = options.amount || 5;
         -for(let i = 1; i <= amount; i++)
