@@ -1,38 +1,37 @@
 include UI_kit/form-elements/components/field/field
-mixin footer(options)
-    -
-        const icons = ["twitter", "facebook", "instagram"]
-        const items = {
-            "навигация": [ "О нас", "Новости", "Служба поддержки", "Услуги"],
-            "О нас": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
-            "Служба поддержки": ["Соглашения", "Сообщества", "Связь с нами"],
-            "Подписка": ["Получайте специальные предложения и новости сервиса", "field"]
-        }
-    .footer
-        .footer__menu
-            .footer__menu-container
-                .footer__menu-info
-                    a.footer__menu-logo(href="#")
-                        img.footer__menu-img(src=require("root/images/logo.svg").default)
-                    p.footer__menu-description
-                        |Бронирование номеров в лучшем 
-                        |отеле 2019 года по версии ассоциации «Отельные взгляды»
-                nav.footer__menu-nav
-                    -for(let key in items)
-                        ul.footer__menu-items
-                            li.footer__menu-header= key
-                            -for(let link of items[key])
-                                li.footer__menu-item
-                                    case link
-                                        when "field"
-                                            .footer__menu-field
-                                                +field({placeholder: "Email", size: "medium", arrow: true})
-                                        default
-                                            a.footer__menu-link(href="#")= link             
-        .footer__submenu
-            .footer__submenu-container
-                span.footer__submenu-text Copyright © 2018 Toxin отель. Все права зачищены.
-                .footer__submenu-icons
-                    each icon in icons
-                        a.footer__submenu-icon(href="#")
-                            img.footer__submenu-img(src=require(`root/images/${icon}.svg`).default)
+mixin footer(options = {icons: [], items: {}})
+	-
+		const icons = options.icons || ["twitter", "facebook", "instagram"]
+		const items = options.items || {
+			"навигация": [ "О нас", "Новости", "Служба поддержки", "Услуги"],
+			"О нас": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
+			"Служба поддержки": ["Соглашения", "Сообщества", "Связь с нами"],
+			"Подписка": ["Получайте специальные предложения и новости сервиса", "field"]
+		}
+
+	footer.footer
+		.footer__main
+			.footer__main-container
+				.footer__main-info
+					p.footer__main-description
+						|Бронирование номеров в лучшем
+						|отеле 2019 года по версии ассоциации «Отельные взгляды»
+				nav.footer__main-nav
+					-for(let key in items)
+						ul.footer__main-items
+							li.footer__main-header= key
+								-for(let link of items[key])
+									li.footer__main-item
+										case link
+											when "field"
+												.footer__main-field
+													+field({placeholder: "Email", size: "medium", arrow: true})
+											default
+												a.footer__main-link(href="#")= link
+		.footer__submenu
+			.footer__submenu-container
+				span.footer__submenu-text Copyright © 2018 Toxin отель. Все права зачищены.
+				.footer__submenu-icons
+					each icon in icons
+						a.footer__submenu-icon(href="#")
+							img.footer__submenu-img(src=require(`root/images/${icon}.svg`).default)
