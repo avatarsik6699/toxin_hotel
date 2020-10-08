@@ -1,126 +1,156 @@
 @import 'FEcomponents/field/field';
 .footer {
-    $root: &;
+	background: #FFFFFF;
+	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 
-    background: #FFFFFF;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    margin-top: 20px;
+	@media all and (max-width: 1008px) {
+			&__main {
+					display: none;
+			}
+	}
 
-    &__menu {
-        margin-bottom: 67px;
-        padding-top: 80px;
+	&__main-container {
+			display: flex;
+			margin: 0 auto;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			max-width: 61.1%;
+			padding: 80px 0px 77px 0;
+	}
+	
+	@media all and (max-width: 1172px) {
+			&__main-container {
+					flex-flow: column wrap;
+			}
+	}
 
-        #{$root}__menu-container {
-                display: flex;
-                width: 927px;
-                margin: 0 auto;
-        }       
-        
-        #{$root}__menu-info {
-            width: 24.5%;
-            padding-right: 20px;
-            margin-right: 15px;
+	&__main-info {
+			position: relative;
+			flex-basis: 23%;
+			padding-top: 3.285em;
+	}
 
-            #{$root}__menu-img {
-                width: 85px;
-            }
-        
-            #{$root}__menu-description {
-                font-family: Montserrat;
-                font-weight: normal;
-                font-size: 11px;
-                line-height: 19.5px;
-                color: rgba(31, 32, 65, 0.75);
-                letter-spacing: 0.1px;
-                margin-top: 12px;
-            }
-        }
+	&__main-info::before {
+		content: '';
+		background-image: url('images/logo.svg');
+		width: 85px;
+		position: absolute;
+		height: 33px;
+		background-size: 100% 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		top: 0px;
+		left: 0px;
+	}	
 
-        #{$root}__menu-nav {
-            display: flex;
-            width: 75%;
-            padding-top: 2px;
+	@media all and (max-width: 1172px) {
+			&__main-info {
+					padding-bottom: 1em;
+			}
+	}
 
-            #{$root}__menu-items {
-                list-style-type: none;
-                width: 30%;
-                margin-right: 1px;
-                padding: 0px;
+	&__main-description {
+			font: 0.8rem/1.75 Montserrat;
+			color: rgba(31, 32, 65, 0.75);
+	}
 
-                #{$root}__menu-header {
-                    font-family: Montserrat;
-                    font-weight: bold;
-                    font-size: 9px;
-                    line-height: 15px;
-                    text-transform: uppercase;
-                    color: #1F2041;
-                    letter-spacing: 0.4px;
-                    margin-bottom: 13px;
-                }
+	&__main-nav {
+			display: flex;
+			flex-basis: 74.1%;
+			justify-content: space-between;
+			padding-top: 0.357em;
+			flex-flow: row wrap;
+	}
 
-                #{$root}__menu-item {
-                    margin-bottom: 12px;
+	&__main-items {
+			list-style-type: none;
+			flex-basis: 18%;
+	}
 
-                    #{$root}__menu-link {
-                        font-family: Montserrat;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 11px;
-                        line-height: 19px;
-                        color: rgba(31, 32, 65, 0.5);
-                        text-decoration: none;
-                        letter-spacing: 0.1px;
-                    }
-                    
-                    #{$root}__menu-field {
-                        padding-top: 7px;
-                    }
+	&__main-item:not(:last-child) {
+			margin-bottom: 0.785em;
+	}
 
-                }
+	&__main-header {
+			font: normal normal bold 0.64rem/1.2 Montserrat, Arial, Helvetica, sans-serif;
+			margin-bottom: 1.6em;
+			text-transform: uppercase;
+			color: #1F2041;
+			letter-spacing: 0.5px;
+	}
 
-            }
-        }
+	&__main-link {
+			font: .8571rem/1.6 Montserrat, Arial, Helvetica, sans-serif;
+			text-decoration: none;
+			color: rgba(31, 32, 65, 0.5);
+			letter-spacing: -0.5px;
+	}
 
-        #{$root}__menu-link {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
-            color: rgba(31, 32, 65, 0.5);
-        }
-    }
-    
-    &__submenu {
-        border-top: 1px solid rgba(31, 32, 65, 0.1);
-        
-        #{$root}__submenu-container {
-            max-width: 927px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0px 16px 0px;
-            align-items: center;
-        }
+	.footer__main-field {
+			padding-top: 0.478em;
+	}
 
-        #{$root}__submenu-text {
-            font-family: Montserrat;
-            font-weight: normal;
-            font-size: 11px;
-            line-height: 17px;
-            color: rgba(31, 32, 65, 0.75);
-            letter-spacing: 0.11px;
-        }
+	&__submenu {
+			border-top: 1px solid rgba(31, 32, 65, 0.1);
+	}
 
-        #{$root}__submenu-icons {
-            display: flex;
-            width: 9.6%;
-            justify-content: space-between;
-            align-items: center;
-        }
+	&__submenu-container {
+			display: flex;
+			max-width: 61.1%;
+			margin: 0 auto;
+			justify-content: space-between;
+			flex-flow: row wrap;
+			align-items: center;
+			padding: 1.24em 0em 1.07em 0em;
+	}
 
-        #{$root}__submenu-img {
-            width: 19px;
-        }
-    }
+	@media all and (max-width: 1008px) {
+			&__submenu-container {
+					flex-flow: column wrap;
+					padding: 10.24em 0em 5.65em 0em;
+			}
+	}
+
+	&__submenu-text {
+			font: normal normal 0.81rem/1.2 Montserrat, Arial, Helvetica, sans-serif;
+			letter-spacing: -0.08px;
+			color: rgba(31, 32, 65, 0.75);
+	}
+
+	&__submenu-icons {
+			display: flex;
+			flex-basis: 6.4em;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 0.14em;
+	}
+
+	@media all and (max-width: 1008px) {
+			&__submenu-icons {
+					flex-basis: 4em;
+					width: 6.4em;
+					position: relative;
+			}
+
+			&__submenu-icons::before {
+					content: '';
+					background-image: url('images/logo.svg');
+					width: 85px;
+					position: absolute;
+					height: 33px;
+					background-size: 100% 100%;
+					background-position: center center;
+					background-repeat: no-repeat;
+					top: -63px;
+					left: 3px;
+			}
+	}
+
+	&__submenu-icon {
+			flex-basis: 1.14em;
+	}
+
+	&__submenu-img {
+			width: 1.3rem;
+	}
 }

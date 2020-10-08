@@ -1,146 +1,17 @@
 @import "~normalize.css";
 @import "~material-icons/iconfont/material-icons.scss";
 @import "./fonts/fonts";
-@import 'FEcomponents/button/button';
+// @import 'FEcomponents/button/button';
 @import 'FEcomponents/field/field';
 // @import "root/UI_kit/cards/components/calendar/calendar";
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
 :root {
-    font-size: 10px;
+    font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     background: #E5E5E5;
 }
 
-.footer {
-    $root: &;
-
-    background: #FFFFFF;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    margin-top: 20px;
-
-    &__menu {
-        margin-bottom: 67px;
-        padding-top: 80px;
-
-        #{$root}__menu-container {
-                display: flex;
-                width: 927px;
-                margin: 0 auto;
-        }       
-        
-        #{$root}__menu-info {
-            width: 24.5%;
-            padding-right: 20px;
-            margin-right: 15px;
-
-            #{$root}__menu-img {
-                width: 85px;
-            }
-        
-            #{$root}__menu-description {
-                font-family: Montserrat;
-                font-weight: normal;
-                font-size: 11px;
-                line-height: 19.5px;
-                color: rgba(31, 32, 65, 0.75);
-                letter-spacing: 0.1px;
-                margin-top: 12px;
-            }
-        }
-
-        #{$root}__menu-nav {
-            display: flex;
-            width: 75%;
-            padding-top: 2px;
-
-            #{$root}__menu-items {
-                list-style-type: none;
-                width: 30%;
-                margin-right: 1px;
-                padding: 0px;
-
-                #{$root}__menu-header {
-                    font-family: Montserrat;
-                    font-weight: bold;
-                    font-size: 9px;
-                    line-height: 15px;
-                    text-transform: uppercase;
-                    color: #1F2041;
-                    letter-spacing: 0.4px;
-                    margin-bottom: 13px;
-                }
-
-                #{$root}__menu-item {
-                    margin-bottom: 12px;
-
-                    #{$root}__menu-link {
-                        font-family: Montserrat;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 11px;
-                        line-height: 19px;
-                        color: rgba(31, 32, 65, 0.5);
-                        text-decoration: none;
-                        letter-spacing: 0.1px;
-                    }
-                    
-                    #{$root}__menu-field {
-                        padding-top: 7px;
-                    }
-
-                }
-
-            }
-        }
-
-        #{$root}__menu-link {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
-            color: rgba(31, 32, 65, 0.5);
-        }
-    }
-    
-    &__submenu {
-        border-top: 1px solid rgba(31, 32, 65, 0.1);
-        
-        #{$root}__submenu-container {
-            max-width: 927px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0px 16px 0px;
-            align-items: center;
-        }
-
-        #{$root}__submenu-text {
-            font-family: Montserrat;
-            font-weight: normal;
-            font-size: 11px;
-            line-height: 17px;
-            color: rgba(31, 32, 65, 0.75);
-            letter-spacing: 0.11px;
-        }
-
-        #{$root}__submenu-icons {
-            display: flex;
-            width: 9.6%;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #{$root}__submenu-img {
-            width: 19px;
-        }
-    }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
