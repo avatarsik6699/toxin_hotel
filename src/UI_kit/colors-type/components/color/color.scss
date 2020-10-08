@@ -1,0 +1,58 @@
+.color {
+	position: relative;
+	padding: 7px 0px 0px 88px;
+}
+
+.color::before {
+	content: "";
+	position: absolute;
+	width: 57px;
+	height: 57px;
+	border-radius: 0.4em;
+	top: 0;
+	left: 0;
+}
+
+.color_theme-default::before {
+	background: black;
+}
+
+.color_theme-dark100::before {
+	background: #1F2041;
+}
+
+.color_theme-dark75::before {
+	background: rgba(31, 32, 65, 0.75);
+}
+
+.color_theme-dark50::before {
+	background: rgba(31, 32, 65, 0.5);
+}
+
+.color_theme-dark25::before {
+	background: rgba(31, 32, 65, 0.25);
+}
+
+.color_theme-dark5::before {
+	background: rgba(31, 32, 65, 0.05);
+}
+
+.color_theme-purple::before {
+	background: #BC9CFF;
+}
+
+.color_theme-green::before {
+	background: #6FCF97;
+}
+
+.color__type {
+	font: normal bold 16px/20px Quicksand;
+	color: #1F2041;
+	letter-spacing: -0.6px;
+}
+
+.color__code {
+	display: block;
+	font: normal normal 15px/1.9 Quicksand;
+	letter-spacing: -0.5px;
+}

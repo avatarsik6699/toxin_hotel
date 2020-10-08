@@ -1,0 +1,4 @@
+mixin color(options = {type: "Dark Shade 100%",code: "#1F2041", theme: "green"})
+  .color(class=`color_theme-${options.theme || "default"}`)
+    span.color__type= options.type
+    span.color__code= options.code || "default"
