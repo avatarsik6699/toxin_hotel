@@ -1,0 +1,31 @@
+@import "root/UI_kit/colors-type/components/color/color";
+@import "root/UI_kit/colors-type/components/type/type";
+.colors-type {
+
+  &__container {
+      display: flex;
+      flex-flow: wrap;
+      max-width: 928px;
+      margin: 0 auto;
+      justify-content: space-between;
+      padding: 100px 0px 100px 0px;
+  }
+
+  &__colors {
+      display: flex;
+      flex-flow: column wrap;
+  }
+
+  &__color {
+      margin-bottom: 17px;
+  }
+
+  &__types {
+      display: flex;
+      flex-flow: column wrap;
+  }
+  
+  &__type {
+      margin-bottom: 39.5px
+  }
+}

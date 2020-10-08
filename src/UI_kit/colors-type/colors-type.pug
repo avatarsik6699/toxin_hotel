@@ -1,0 +1,31 @@
+include UI_kit/colors-type/components/color/color
+include UI_kit/colors-type/components/type/type
+-
+  const color_codes_types_theme = {
+    "Dark Shade 100%": ["#1F2041", "dark100"],
+    "Dark Shade 75%": ["#1F2041", "dark75"],
+    "Dark Shade 50%": ["#1F2041", "dark50"],
+    "Dark Shade 25%": ["#1F2041", "dark25"],
+    "Dark Shade 5%": ["#1F2041", "dark5"],
+    "Purple": ["#BC9CFF",	"purple"],
+    "Green": ["#6FCF97", "green"],
+  }
+
+  const type_headers_descriptions = {
+    "h1": "This one is the sub-section or widget title",
+    "h2": "Next one is the item title inside widgets",
+    "h3": "This is a label or CTA text",
+    "body": "This is the body text which is used for most of the design, like paragraphs, lists, etc."
+  }
+
+.colors-type
+    img(src=require("root/images/logo_gray.svg").default)
+    .colors-type__container
+      .colors-type__colors
+        -for(let type in color_codes_types_theme)
+          .colors-type__color
+            +color({type: type ,code: color_codes_types_theme[type][0], theme: color_codes_types_theme[type][1]})
+      .colors-type__types
+        -for(let header in type_headers_descriptions)
+          .colors-type__type
+            +type({header: header, description: type_headers_descriptions[header], size: header})
