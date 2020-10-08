@@ -1,71 +1,51 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-:root {
-    font-size: 10px;
-    box-sizing: border-box
-}
-
 .field {
-    width: 256px;
-    position: relative;
+	max-width: 341px;
 
-    &_size_large{
-        width: 256px;
-    }
+	&_size-medium {
+		width: 284px;
+	}
 
-    &_size_medium{
-        width: 208px;
-    }
-}
+	&__label {
+    font: bold 13px/15px Montserrat, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #1F2041;
+		letter-spacing: -0.1px;
+    display: inline-block;
+		margin-bottom: 7px;
+	}
 
-.text-field {
-    width: 100%;
-    height: 36px;
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
-    padding-left: 11px;
-    padding-right: 30px;
+	&__input-wrapper {
+		position: relative;
+	}
+
+	&__input { 
+		width: 100%;
+		padding: 0px 35px 0px 14px;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		border-radius: 4px;
+		background: transparent;
+		
+		font: 1.071rem/2.97 Montserrat, Arial, Helvetica, sans-serif;
+    color: rgba(31, 32, 65, 0.75);
     text-overflow: ellipsis;
-    outline: none;
+	}
 
-    font-family: Montserrat;
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
+	&__input::placeholder {
+		color: rgba(31, 32, 65, 0.25);
+	}
 
-    // &_type_subscription {
+	&__input:hover {
+		border: 1px solid rgba(31, 32, 65, 0.5);
+	}
 
-    // }
-}
+	&__input:focus {
+		border: 1px solid rgba(31, 32, 65, 0.5);
+	}
 
-.text-field::placeholder {
-    font-family: Montserrat;
-    font-size: 11px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.25);
-}
-
-.text-field:focus {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    color: rgba(31, 32, 65, 0.75);
-}
-
-.text-field:hover {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    color: rgba(31, 32, 65, 0.75);
-}
-
-.field__arrow {
+	&__arrow {
     position: absolute;
-    top: 11px;
-    right: 11px;
-    width: 14px;
-    height: 15px;
+    top: 14px;
+		right: 14px;
+		z-index: -1;
+	}
 }
