@@ -1,7 +1,6 @@
-mixin toggle(options = {text: "Получать спецпредложения", checked: false}) 
-    .switch 
-        label.switch__btn
-            input.switch__checkbox(type="checkbox" checked=options.checked)
-            span.switch__handle
-        span.switch__text= options.text 
-        
+mixin toggle(options = {text: "Получать спецпредложения", checked: false})
+	.toggle
+		label.toggle__label
+			input.toggle__button(type="checkbox" checked=options.checked)
+			span.toggle__handle
+			span.toggle__text= options.text
