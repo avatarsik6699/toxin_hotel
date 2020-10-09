@@ -5,4 +5,26 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Document
 	body
+	include UI_kit/form-elements/components/field/field
+	include UI_kit/form-elements/components/button/button
+	.form-elements
+		header.form-elements__header
+			img.form-elements__logo(src=require("root/images/logo_gray.svg").default, alt="logo")
+		.form-elements__container
+			.form-elements__first-column
+				.form-elements__field-default
+					+field({placeholder: "Email", label: true, label_text: "Text Field"})
+				.form-elements__field-hover-focus
+					+field({value: "This is pretty awesome", label: true, label_text: "Text Field"})
+				.form-elements__field-masked
+					+field({masked: true, placeholder: "ДД.ММ.ГГГГ", label: true, label_text: "masked text field", size: "default", id: 1})
+				.form-elements__field-subscription
+					+field({placeholder: "Email", arrow: true, label: true, label_text: "subscription text field", size: "medium"})
+		//- ---------------------------------------------------------------------------------------------------------------------------
 
+		//- ---------------------------------------------------------------------------------------------------------------------------
+		.container
+			+dropdown({type: "default", list: ['спальни', 'кровати', 'ванные комнаты'], buttons: false, title: "dropdown", size: "default", id: 9})
+			+dropdown({type: "default", list: ['взрослые', 'дети', 'младенцы'], buttons: true, title: "dropdown", size: "large", id: 12})
+			+dropdown({type: "filter", buttons: true, title: "dropdown", size: "medium", id: 10})
+			+dropdown({type: "date", buttons: true, placeholder: "ДД.ММ.ГГГГ", title: ["DATE DROPDOWN","DATE DROPDOWN"], size: "small", id: 55})

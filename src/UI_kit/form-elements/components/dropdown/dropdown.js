@@ -57,29 +57,28 @@ export class Dropdown {
         this.dropdown = this.dom.getNode(document, this.selector);
             if(this.type === 'default') {
                 this.field = this.setNode('field')
-                this.items = this.setNode('items')
+                this.items = this.setNode('items-wrapper')
 
                 if (this.hasButtons()) {
                     // нет прямого доступа к кнопкам из html
                     // поэтому data-attrubutes устанавливаем ч/з js
                     this.dom.setDataAttribute(
-                        this.dom.getNode('.dropdown__btn-clear','.btn'), 
+                        this.dom.getNode('.dropdown__button-clear','.button__link'), 
                         'clear')
 
                     this.dom.setDataAttribute(
-                        this.dom.getNode('.dropdown__btn-apply','.btn'), 
+                        this.dom.getNode('.dropdown__button-apply','.button__link'), 
                         'apply')
                 }
             }
 
             if (this.type === 'filter') {
                 this.field = this.dropdown.querySelector('.dropdown__field');
-                // console.log(this.setNode('field'));
             }
 
         // options ---------------------------------------------------
         this.defaultOptions = {
-            exceptions: ['взрослые', 'дети','спальни', 'кровати'],
+            exceptions: ['взрослые', 'дети'],
             exceptionDeclension: 'гости',   
             declensions: {
                 'спальни': ['спальня', 'спальни', 'спален'],
@@ -202,28 +201,29 @@ export class Dropdown {
             this.addClass(
                 this.dropdown, 
                 '.dropdown__buttons-wrapper',
-                'dropdown__buttons-wrapper_justify-content_space-between')
+                'dropdown__buttons-wrapper_justify_content-space-between')
 
             this.addClass(
                 this.dropdown, 
-                '.dropdown__btn-clear',
-                'dropdown__btn-clear_display-true')
+                '.dropdown__button-clear',
+                'dropdown__button-clear_display-true')
         } 
         
         if ( this.sumNumberValue === 0 && this.hasButtons() ) {
             this.removeClass(
                 this.dropdown, 
                 '.dropdown__buttons-wrapper',
-                'dropdown__buttons-wrapper_justify-content_space-between')
+                'dropdown__buttons-wrapper_justify_content-space-between')
             
             this.removeClass(
                 this.dropdown, 
-                '.dropdown__btn-clear',
-                'dropdown__btn-clear_display-true')
+                '.dropdown__button-clear',
+                'dropdown__button-clear_display-true')
         }
     }
 
     eventButton(e) {
+        console.log(this.getEventValue(e));
         if (this.getEventValue(e) === 'apply') {
             this.hide();
         }
@@ -252,12 +252,12 @@ export class Dropdown {
     }
 
     changeField(number, field, category, operation) {
-        if (this.defaultOptions.exceptions.includes(category)) {
+        if (this.options.exceptions.includes(category)) {
             
             if (operation === 'add') {
-                this.fieldData[this.defaultOptions.exceptionDeclension] += 1;
+                this.fieldData[this.options.exceptionDeclension] += 1;
             } else {
-                this.fieldData[this.defaultOptions.exceptionDeclension] -= 1;
+                this.fieldData[this.options.exceptionDeclension] -= 1;
             }
 
         } else {
@@ -285,11 +285,11 @@ export class Dropdown {
 
     findDeclension(category, amount) {
         if (amount === 1) {
-            return this.defaultOptions.declensions[category][0];
+            return this.options.declensions[category][0];
         } else if (amount > 1 && amount < 5) {
-            return this.defaultOptions.declensions[category][1];
+            return this.options.declensions[category][1];
         } else {
-            return this.defaultOptions.declensions[category][2];
+            return this.options.declensions[category][2];
         }
     }
     
@@ -299,9 +299,9 @@ export class Dropdown {
 
     btnDisabled(boolean, btn) {
         if (boolean) {
-            btn.classList.add('dropdown__substract_disabled-true');
+            btn.classList.add('dropdown__substract_disabled');
         } else {
-            btn.classList.remove('dropdown__substract_disabled-true');
+            btn.classList.remove('dropdown__substract_disabled');
         }
     }
 
@@ -329,21 +329,20 @@ export class Dropdown {
     }
 
     hide() {
-        this.items.classList.remove('dropdown__items_display-true'); 
-        this.field.classList.remove('dropdown__field_checked-true');
+        this.items.classList.remove('dropdown__items-wrapper_display-true'); 
+        this.field.classList.remove('dropdown__field_checked');
     }
 
     open() {
-        this.items.classList.add('dropdown__items_display-true');
+        this.items.classList.add('dropdown__items-wrapper_display-true');
     }
 
     toggle() {
-        this.items.classList.toggle('dropdown__items_display-true');
-        this.field.classList.toggle('dropdown__field_checked-true');
+        this.items.classList.toggle('dropdown__items-wrapper_display-true');
+        this.field.classList.toggle('dropdown__field_checked');
     }
 
     reset(e) {
-        
         this.field.value = '';
 
         const btnSubList = this.items.querySelectorAll('span.dropdown__substract');

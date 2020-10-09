@@ -1,40 +1,44 @@
 include ../button/button
 mixin dropdown(options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false})
-    -
-        if (!options)
-            var options = {size: 'large', type: 'default', placeholder: 'Текст', title: "text", buttons: false}
-        let className = `dropdown__field dropdown__field_size-${options.size}`
-        let list = ['спальни', 'кровати', 'ванные комнаты']
+	-
+		const dropdownExtraClasses = `dropdown_size-${options.size}`
+		const items_wrapperExtraClasses = `dropdown__items-wrapper_size-${options.size}`
+		const categoryExtraClasses = `dropdown__category_size-${options.size}`
+		const change_panelExtraClasses = `dropdown__change-panel_size-${options.size}`
 
-    -if(options.type === 'default')
-        .dropdown(data-type="default" data-id=options.id)
-            span(class="dropdown__title")= options.title
-            input(class=className type="text", name="" placeholder=options.placeholder data-field autocomplete="off" readonly)
-            .dropdown__items(class=`dropdown__items_size-${options.size}`)
-                each item in list
-                    .dropdown__item   
-                        span(class="dropdown__category")= item
-                        .dropdown__change-panel    
-                            span(class="dropdown__substract dropdown__substract_disabled-true" data-change="sub") -
-                            span(class="dropdown__number") 0
-                            span(class="dropdown__add" data-change="add") +
-                -if(options.buttons)
-                    .dropdown__buttons-wrapper                
-                        .dropdown__btn-clear
-                            +button({theme: 'none', size: 'small', arrow: false, text: 'очистить', textColor: 'gray'})
-                        .dropdown__btn-apply
-                            +button({theme: 'none', size: 'small', arrow: false, text: 'применить', textColor: 'purple'})
-                
-    -if(options.type === 'filter')
-        .dropdown(data-type="filter" data-id=options.id)
-            span(class="dropdown__title")= options.title
-            input(class=className type="text", name="" placeholder=options.placeholder autocomplete="off"  readonly)
-
-    -if(options.type === 'date')
-        .dropdown-wrapper(data-type="date" data-id=options.id)
-            div(class="dropdown dropdown_to" data-type="date_from")
-                span(class="dropdown__title")= options.title[0]
-                input(class=className type="text", name="" placeholder=options.placeholder data-time="from" autocomplete="off" readonly)
-            div(class="dropdown dropdown_from" data-type="date_to")
-                span(class="dropdown__title")= options.title[1]
-                input(class=className type="text", name="" placeholder=options.placeholder data-time="to" autocomplete="off" readonly)
+		const list = options.list || ['взрослые', 'дети', 'младенцы']
+	-if(options.type === 'default')
+		.dropdown(data-type="default" data-id=options.id class=dropdownExtraClasses)
+			span.dropdown__title= options.title
+			.dropdown__field-wrapper
+				input.dropdown__field(type="text", placeholder=options.placeholder data-field autocomplete="off" readonly)
+			.dropdown__items-wrapper(class=items_wrapperExtraClasses)
+				.dropdown__items
+					each item in list
+						.dropdown__item  
+							span.dropdown__category(class=categoryExtraClasses)= item
+							.dropdown__change-panel(class=change_panelExtraClasses)
+								span.dropdown__substract(class="dropdown__substract_disabled" data-change="sub") -
+								span.dropdown__number 0
+								span.dropdown__add(data-change="add") +
+					-if(options.buttons)
+						.dropdown__buttons-wrapper 
+							.dropdown__button-clear
+								+button({theme: 'none', size: 'small', arrow: false, link_text: 'очистить', color: 'gray'})
+							.dropdown__button-apply
+								+button({theme: 'none', size: 'small', arrow: false, link_text: 'применить', color: 'purple'})
+	-if(options.type === 'filter')
+		.dropdown(data-type="filter" data-id=options.id class=dropdownExtraClasses)
+			span.dropdown__title=options.title
+				.dropdown__field-wrapper(class=field_wrapperExtraClasses)
+					input.dropdown__field(type="text", placeholder=options.placeholder autocomplete="off" readonly)
+	-if(options.type === 'date')
+		.dropdown-wrapper(data-type="date" data-id=options.id)
+			.dropdown(class=`dropdown__from ${dropdownExtraClasses}` data-type="date_from")
+				span.dropdown__title=options.title[0]
+				.dropdown__field-wrapper(class=field_wrapperExtraClasses)
+					input.dropdown__field(type="text", placeholder=options.placeholder autocomplete="off" data-time="from" readonly)
+			.dropdown(class=`dropdown__to ${dropdownExtraClasses}` data-type="date_to")
+				span.dropdown__title=options.title[1]
+					.dropdown__field-wrapper(class=field_wrapperExtraClasses)
+						input.dropdown__field(type="text", placeholder=options.placeholder autocomplete="off" data-time="to" readonly)
