@@ -1,72 +1,65 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-:root {
-    font-size: 10px;
-    box-sizing: border-box
-}
 
 .radio {
-    display: inline-block;
+	display: inline-block;
+	position: relative;
+
+	&__button {
+		opacity: 0;
+		z-index: -1;
+		position: absolute;
+	}
+
+	&__button {
+		opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: 7px;
+    left: 4px;
+	}
+
+	&__fake {
+		padding-left: 30px;
     position: relative;
+	}
 
-    &__btn {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        top: 7px;
-        left: 2px;
-    }
+	&__text {
+		font: 14px/24px Montserrat;
+    color: rgba(31, 32, 65, 0.5);
+	}
 
-    &__name {
-         cursor: pointer;
-        margin-left: 24px;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.5);
-        letter-spacing: -0.5px;
+	&__fake::after {
+    content: "";
+    background: transparent;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+	}
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border: 1px solid rgba(31, 32, 65, 0.25);
-            border-radius: 10px; 
-            top: 5px;
-            left: 0px;
-            background: transparent;
-        }
+	&__fake::before {
+		content: "";
+    position: absolute;
+    background: transparent;
+    border-radius: 10px;
+    width: 11px;
+    height: 11px;
+    top: 3.4px;
+    left: 4.6px;
+	}
 
-        &::after {
-           content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: transparent;
-            border-radius: 10px; 
-            top: 8px;
-            left: 3px; 
-        }
-    }
-}
+	&__button:checked + &__fake::before {
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	}
 
-.radio__btn:checked + .radio__name::before {
-    border: 1px solid #BC9CFF;
-}
+	&__button:checked + &__fake::after {
+		border: 1px solid #BC9CFF;
+	}
 
-.radio__btn:checked + .radio__name::after {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-.radio__btn:checked + .radio__name {
-    color: rgba(31, 32, 65, 0.75);
+	&__button:checked + &__text {
+		color: rgba(31, 32, 65, 0.75);
+	}
 }

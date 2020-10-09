@@ -7,6 +7,7 @@ html(lang="en")
 	body
 	include UI_kit/form-elements/components/field/field
 	include UI_kit/form-elements/components/button/button
+	include UI_kit/form-elements/components/checkbox/checkbox
 	.form-elements
 		header.form-elements__header
 			img.form-elements__logo(src=require("root/images/logo_gray.svg").default, alt="logo")
@@ -21,6 +22,7 @@ html(lang="en")
 				.form-elements__field-subscription
 					+field({placeholder: "Email", arrow: true, label: true, label_text: "subscription text field", size: "medium"})
 		//- ---------------------------------------------------------------------------------------------------------------------------
+		//- mixin
 	
 		//- ---------------------------------------------------------------------------------------------------------------------------
 		//- .container

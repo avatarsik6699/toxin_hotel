@@ -1,7 +1,6 @@
-mixin radio(options = {text: 'Пол не определен', name: 'default'}) 
-    if (!options)
-        -var options = {text: 'Пол не определен', name: 'default'}
-        
-    label(class="radio")    
-        input(type="radio", name=`${options.name || 'default'}` class="radio__btn")
-        span(class="radio__name")= options.text
+mixin radio(options = {text: "Мужчина"})
+	.radio
+		label.radio__label
+			input.radio__button(type="radio", name=`${options.name || 'default'}`)
+			span.radio__fake
+			span.radio__text= options.text
