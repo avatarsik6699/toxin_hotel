@@ -1,82 +1,69 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-:root {
-    font-size: 10px;
-    box-sizing: border-box
-}
-
 .like {
-    display: inline-flex;
-    position: relative;
-    background:rgba(31, 32, 65, 0.25);
-    border-radius: 30px;
-    width: 31.9px;
-    height: 15.9px;;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-}
+	display: inline-flex;
+	position: relative;
+	max-width: 69px;
+	border-radius: 10px;
+	width: 40px;
+	height: 21px;
+	background: rgba(31, 32, 65, 0.25);
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 2px 10px 0px 5px;
 
-.like__img path {
-    fill: none;
-    stroke: rgba(31, 32, 65, 0.25);
-}
-
-.like__img {
-    width: 8px;
-    height: 8px;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.like__amount {
-    color: rgba(31, 32, 65, 0.25);
-    font-family: Montserrat;
-    font-size: 8px;
-    z-index: 1;
-    padding-right: 3px;
-    cursor: pointer;
-}
-
-.like:hover {
-    background: linear-gradient(79deg, #bc9cff 0%, #8ba4f9 100%);
-
-    & .like__img path {
-        fill: #BC9CFF;
-        stroke: none;
-    }
-
-    & .like__amount {
-        color: #BC9CFF;
-    }
-}
-
-.like::before {
+	&::after {
     content: "";
-    width: 30px;
-    height: 14px;
     position: absolute;
-    border-radius: 30px;
-    background: white;
-    left: 1px;
-    top: 1px;
-}
+    width: 37.4px;	
+    height: 19px;
+    background: #fff;
+    top: 0.8px;
+		left: 1.3px;
+    z-index: 1;
+    border-radius: 10px;
+	}
 
-.like_checked {
-    background: linear-gradient(79deg, #bc9cff 0%, #8ba4f9 100%);
+	&__icon {
+		display: inline-block;
+    width: 10px;
+    height: 10px;
+		padding-right: 0px;
+		z-index: 2;
+	}
 
-    & .like__img path {
-        fill: #BC9CFF;
-        stroke: none;
-    }
+	&__img path {
+		fill: none;
+    stroke: rgba(31, 32, 65, 0.25);
+	}
 
-    & .like__amount {
-        color: #BC9CFF;
-    }
+	&__count {
+		font: 10px/15px Montserrat;
+		color: rgba(31, 32, 65, 0.25);
+		z-index: 2;
+	}
+
+	&:hover {
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	}
+
+	&:hover &__img path {
+		fill: #BC9CFF;
+    stroke: none;
+	}
+
+	&:hover &__count {
+		color: #BC9CFF;
+	}
+
+	&_checked-true {
+		background: linear-gradient(79deg, #bc9cff 0%, #8ba4f9 100%);
+
+		& .like__img path {
+			fill: #BC9CFF;
+			stroke: none;
+		}
+
+		& .like__count {
+			color: #BC9CFF;
+		}
+	}
 }
