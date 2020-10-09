@@ -1,9 +1,9 @@
 @import "~normalize.css";
 @import "~material-icons/iconfont/material-icons.scss";
 @import "./fonts/fonts";
-// @import 'FEcomponents/button/button';
 @import 'FEcomponents/field/field';
-@import "root/UI_kit/colors-type/components/type/type";
+@import 'FEcomponents/button/button';
+@import "root/UI_kit/cards/components/calendar/calendar";
 :root {
     font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -14,4 +14,55 @@
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+.form-elements {
+	
+	&__container {
+    max-width: 1440px;
+    margin: 0 auto;
+	}
+
+	&__logo {
+		width: 51px;
+	}
+
+	&__first-column {
+		display: flex;
+		flex-flow: column wrap;
+	}
+
+	&__field-default {
+			position: relative;
+			display: inline-block;
+			max-width: 341px;
+			&::after {
+				content: 'Default';
+				font: 12px/15px Montserrat;
+				text-transform: uppercase;
+				color: rgba(31, 32, 65, 0.5);	
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			}
+	}
+
+	&__field-hover-focus {
+		position: relative;
+		display: inline-block;
+		max-width: 341px;
+		&::after {
+			content: 'Hover / Focus';
+			font: 12px/15px Montserrat;
+			text-transform: uppercase;
+			color: rgba(31, 32, 65, 0.5);	
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+	}
+}
+
+.container {
+	margin-left: 50px;
 }
