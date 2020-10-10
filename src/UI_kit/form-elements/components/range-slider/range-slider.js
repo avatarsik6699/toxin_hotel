@@ -1,11 +1,11 @@
 require("jquery-ui/ui/widgets/slider");
 class Slider {
     constructor(root) {
-        this.root = root ? $(root) : $('.slider-wrapper');
+        this.root = root ? $(root) : $('.range-slider-wrapper');
         this.template = this.createTemplate()
         this.renderTemplate(this.template);
         this.$anchor = $('.slider');
-        this.$values = $('.slider__values');
+        this.$values = $('.range-slider__values');
     }
     
     init(options) {
@@ -29,7 +29,7 @@ class Slider {
 
     createTemplate() {
         return `
-        <span class="slider__values"></span>
+        <span class="range-slider__values"></span>
         <div class="slider">
         </div>
         `
@@ -51,7 +51,7 @@ class Slider {
     }
 }
 
-new Slider('.slider-wrapper').init({
+new Slider('.range-slider-wrapper').init({
     range: true,
     min: 0,
     max: 20000,

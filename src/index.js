@@ -2,7 +2,7 @@ import './style.scss';
 import 'FEcomponents/field/field';
 import { Dropdown } from 'FEcomponents/dropdown/dropdown';
 import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
-
+import 'FEcomponents/range-slider/range-slider';
 // const drop21 = new Dropdown('div.dropdown[data-id="9"]', {})
 // const dropdown = new Dropdown('div.dropdown[data-id="12"]', {
 //   exceptions: ['взрослые', 'дети'],
