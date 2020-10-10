@@ -1,18 +1,12 @@
 include UI_kit/form-elements/components/like/like
-mixin review(options)
-    -
-        let name = 'Мурад Сарафанов'
-        let time = '5 дней назад'
-        let comment = `Великолепный матрас на кровати в основной спальне! 
-        А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. 
-        Выкрикивал комплименты повару — никто не жаловался из соседей.`
-    .review
-        .review__user
-            img.review__avatar(src=require("root/images/user_avatar.svg").default)
-            .review__info
-                span.review__name= name
-                span.review__time= time
-        .review__description
-            .review__like
-                +like({checked: true})
-            p.review__comment= comment
+mixin review(options = {name: "", time: "", comment: ""})
+	.review
+		.review__user
+			img.review__avatar(src=require("root/images/avatar.jpg").default)
+			.review__info
+				span.review__name= options.name
+				span.review__time= options.time
+		.review__description
+			.review__like
+				+like({checked: true, count: 12})
+			p.review__comment= options.comment
