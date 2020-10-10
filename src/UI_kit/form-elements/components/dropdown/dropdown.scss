@@ -11,12 +11,15 @@
 
 .dropdown {	
 	max-width: 267px;
+
 	&_size-large {
 		max-width: 321px;
 	}
+
 	&_size-small {
 		max-width: 150px;
 	}
+	
 	&_size-medium {
 		max-width: 266px;
 	}

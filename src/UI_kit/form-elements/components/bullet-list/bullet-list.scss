@@ -1,12 +1,7 @@
-
 .bullet-list {
 	max-width: 252px;
 	&__title {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+		font: normal bold 12px/15px Montserrat;
     text-transform: uppercase;
     color: #1F2041;
 	}
@@ -22,11 +17,7 @@
 	}
 
 	&__item {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1.6;
+		font: normal normal 14px/1.6 Montserrat;
     color: rgba(31, 32, 65, 0.75);
     list-style-type: none;
 	}

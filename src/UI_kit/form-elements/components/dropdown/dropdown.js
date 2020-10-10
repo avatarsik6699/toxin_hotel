@@ -154,7 +154,6 @@ export class Dropdown {
                 classes: 'datepicker__date-type_filter',
                 multipleDatesSeparator: ' - ',
             });
-            // this.added = true;
     }
 
     // Default events----------------------------------------
@@ -247,7 +246,6 @@ export class Dropdown {
 
         if (this.isNumberZero(number)) { 
             this.btnDisabled(true, btn); 
-            // return;
         }
     }
 
