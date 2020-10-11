@@ -1,5 +1,5 @@
-include UI_kit/form-elements/components/like/like
-mixin review(options = {name: "", time: "", comment: ""})
+include ../like/like
+mixin review(options = {name: "", time: "", comment: "", like_options: {checked: true, count: 12}})
 	.review
 		.review__user
 			img.review__avatar(src=require("root/images/avatar.jpg").default)
@@ -8,5 +8,5 @@ mixin review(options = {name: "", time: "", comment: ""})
 				span.review__time= options.time
 		.review__description
 			.review__like
-				+like({checked: true, count: 12})
+				+like(options.like_options || {checked: true, count: 12})
 			p.review__comment= options.comment

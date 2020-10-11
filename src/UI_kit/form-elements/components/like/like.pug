@@ -1,4 +1,4 @@
-mixin like(options)
+mixin like(options = {checked: false, count: 12})
 	-
 		const likeExtraClasses = `like_checked-${options.checked}`
 	.like(class = likeExtraClasses)

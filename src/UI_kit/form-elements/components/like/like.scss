@@ -8,16 +8,16 @@
 	background: rgba(31, 32, 65, 0.25);
 	align-items: flex-start;
 	justify-content: space-between;
-	padding: 2px 10px 0px 5px;
+	padding: 3px 10px 0px 5px;
 
 	&::after {
     content: "";
     position: absolute;
-    width: 37.4px;	
-    height: 19px;
+    width: 37.8px;
+    height: 18.5px;
     background: #fff;
-    top: 0.8px;
-		left: 1.3px;
+    top: 1.3px;
+    left: 1.1px;
     z-index: 1;
     border-radius: 10px;
 	}
@@ -36,7 +36,7 @@
 	}
 
 	&__count {
-		font: 10px/15px Montserrat;
+		font: 10px/16px Montserrat;
 		color: rgba(31, 32, 65, 0.25);
 		z-index: 2;
 	}

@@ -1,9 +1,9 @@
 @import 'FEcomponents/checkbox/checkbox';
 .checkbox-list {
-	$root: &;
 	max-width: 250px;
-	margin-left: 59px;
 	position: relative;
+	display: inline-block;
+	padding-right: 57px;
 
 	&__check {
 		position: absolute;
@@ -29,7 +29,7 @@
 		width: 12px;
 		height: 18px;
 		top: 0;
-		right: 0;
+		right: 0px;
 		transition: height .3s ease, opacity .3s ease;
 		transform: rotate(0deg);
 	}

@@ -7,12 +7,19 @@
 		display: flex;
     flex-flow: row wrap;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 18px;
+	}
+
+	&__detail:not(:last-of-type) {
+		margin-bottom: 23px;
+	}
+	
+	&__img {
+		height: 40px;
 	}
 
 	&__info {
-		margin-left: 18px;
+		margin-left: 16px;
 	}
 
 	&__category {

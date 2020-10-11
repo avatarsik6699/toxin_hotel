@@ -3,8 +3,7 @@
 @import "~jquery-ui/themes/base/slider.css";
 
 .range-slider-wrapper {
-	width: 250px;
-  margin: 5px;
+  max-width: 266px;
 }
 
 .range-slider {
@@ -36,12 +35,13 @@
 }
 
 .range-slider__values {
-	font-family: Montserrat;
-  font-size: 13px;
+  font-family: Montserrat;
+  font-size: 12px;
   letter-spacing: 0.1px;
   text-transform: uppercase;
   color: rgba(31, 32, 65, 0.5);
-  display: block;
+  display: inline-block;
   text-align: right;
   margin-bottom: 22px;
+  padding-right: 1px;
 }

@@ -1,12 +1,22 @@
-@import "~normalize.css";
-@import "~material-icons/iconfont/material-icons.scss";
-@import "./fonts/fonts";
-@import 'FEcomponents/field/field';
-@import 'FEcomponents/like/like';
+@import '~normalize.css';
+@import './fonts/fonts';
+@import 'FEcomponents/bullet-list/bullet-list';
 @import 'FEcomponents/button/button';
 @import 'FEcomponents/checkbox/checkbox';
-@import 'FEcomponents/range-slider/range-slider.scss';
+@import 'FEcomponents/checkbox-list/checkbox-list';
+@import 'FEcomponents/checkbox-rich/checkbox-rich';
+@import 'FEcomponents/dropdown/dropdown';
+@import 'FEcomponents/field/field';
+@import 'FEcomponents/like/like';
+@import 'FEcomponents/pagination/pagination';
+@import 'FEcomponents/radio/radio';
+@import 'FEcomponents/range-slider/range-slider';
+@import 'FEcomponents/rate/rate';
+@import 'FEcomponents/review/review';
+@import 'FEcomponents/room-details/room-details';
+@import 'FEcomponents/toggle/toggle';
 @import "root/UI_kit/cards/components/calendar/calendar";
+
 :root {
     font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -20,25 +30,34 @@
 }
 
 .form-elements {
-	
+
+	&__logo {
+		width: 50px;
+    height: 48px;
+		margin-bottom: 29px;
+	}
+
 	&__container {
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
 	}
 
-	&__logo {
-		width: 51px;
+	&__columns {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
 	}
 
-	&__first-column {
+	&__fields-wrapper {
 		display: flex;
-		flex-flow: column wrap;
+    flex-flow: column wrap;
 	}
 
 	&__field-default {
 			position: relative;
 			display: inline-block;
 			max-width: 341px;
+			margin-bottom: 19px;
 			&::after {
 				content: 'Default';
 				font: 12px/15px Montserrat;
@@ -54,18 +73,228 @@
 		position: relative;
 		display: inline-block;
 		max-width: 341px;
+		margin-bottom: 16px;
 		&::after {
 			content: 'Hover / Focus';
 			font: 12px/15px Montserrat;
 			text-transform: uppercase;
 			color: rgba(31, 32, 65, 0.5);	
 			position: absolute;
-			right: 0px;
-			top: 0px;
+			right: -2px;
+			top: 2px;
 		}
 	}
-}
 
-.container {
-	margin-left: 50px;
+	&__dropdown-default {
+		margin-bottom: 21px;	
+	}
+
+	&__field-masked {
+		margin-bottom: 36px;
+	}
+
+	&__dropdown-date {
+		margin-bottom: 37px;
+	}
+
+	&__dropdown-filter {
+		margin-bottom: 40px;
+	}
+
+	&__inputs-wrapper {
+		flex: 0 0 265px;
+	}
+
+	&__checkboxes {
+		max-width: 224px;
+		margin-bottom: 42px;
+	}
+
+	&__checkboxes-title {
+    font: normal bold 12px/19px Montserrat;
+    text-transform: uppercase;
+    color: #1F2041;
+    margin-bottom: 15px;
+    display: block;
+	}
+
+
+	&__checkbox {
+		margin-bottom: 13px;
+	}
+
+	&__radio-buttons {
+		margin-bottom: 40px;
+	}
+
+	&__radio-buttons-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		margin-bottom: 13px;
+	}
+
+	&__radio-button {
+		display: inline-block;
+	}
+
+	&__radio-button:last-child {
+		padding-left: 20px;
+	}
+
+	&__toggles {
+		margin-bottom: 42px;
+	}
+
+	&__toggles-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		letter-spacing: -0.5px;
+		margin-bottom: 14px;
+	}
+
+	&__toggle:first-of-type {
+		margin-bottom: 10px;
+	}
+
+	&__likes {
+		margin-bottom: 40px;
+	}
+
+	&__likes-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+    margin-bottom: 17px;
+	}
+
+	&__like {
+		display: inline-block;
+	}
+
+	&__like:first-of-type {
+		margin-right: 10px;
+	}
+
+	&__rate-buttons-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		margin-bottom: 17px;
+	}
+
+	&__rate-button {
+		display: inline-block;
+	}
+
+	&__rate-button:first-of-type {
+		margin-right: 25px; 
+	}
+
+	&__range-slider {
+		margin-bottom: 44px;
+	}
+
+	&__range-slider-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: inline-block;
+		margin-right: 67px;
+	}
+
+	&__buttons-wrapper {
+		flex-basis: 362px;	
+	}
+
+	&__buttons-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		margin-bottom: 14px;
+	}
+
+	&__button_theme-full {
+		margin-bottom: 30px;
+	}
+
+	&__button_theme-transparent {
+		margin-bottom: 17px;
+	}
+
+	&__button_theme-none {
+		display: inline-block;
+    margin-right: 22px;
+    padding-left: 2px;
+	}
+
+	&__button_size-large {
+		margin-top: 16px;
+    margin-bottom: 40px;
+	}
+
+	&__pagination-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		margin-bottom: 17px;
+	}
+
+	&__dropdowns-wrapper {
+		display: flex;
+    justify-content: space-between;
+		align-items: center;
+		flex-flow: row wrap;
+    margin-top: 93px;
+    max-width: 1162px;
+	}
+
+	&__dropdown-things {
+		flex-basis: 266px;
+	}
+
+	&__dropdown-guests {
+		flex-basis: 322px;
+	}
+
+	&__lists-wrapper {
+		margin-top: 255px;
+    display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+
+	&__checkbox-list {
+		flex-basis: 309px;
+	}
+
+	&__checkbox-rich {
+		flex-basis: 254px;
+	}
+
+	&__bullet-list {
+		flex-basis: 361px;
+	}
+
+	&__footer {
+		display: flex;
+		flex-flow: row wrap;
+		margin-top: 224px;
+		padding-left: 2px;
+	}
+
+	&__room-details {
+		flex-basis: 510px;
+	}
+	&__review {
+		flex-basis: 861px;
+    padding-top: 9px;
+	}
 }

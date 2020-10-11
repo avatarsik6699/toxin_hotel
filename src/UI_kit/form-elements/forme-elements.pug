@@ -1,0 +1,142 @@
+include UI_kit/form-elements/components/bullet-list/bullet-list
+include UI_kit/form-elements/components/button/button
+include UI_kit/form-elements/components/checkbox/checkbox
+include UI_kit/form-elements/components/checkbox-list/checkbox-list
+include UI_kit/form-elements/components/checkbox-rich/checkbox-rich
+include UI_kit/form-elements/components/dropdown/dropdown
+include UI_kit/form-elements/components/field/field
+include UI_kit/form-elements/components/like/like
+include UI_kit/form-elements/components/pagination/pagination
+include UI_kit/form-elements/components/radio/radio
+include UI_kit/form-elements/components/rate/rate
+include UI_kit/form-elements/components/room-details/room-details
+include UI_kit/form-elements/components/toggle/toggle
+include UI_kit/form-elements/components/review/review
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Document
+	body
+		.form-elements
+			img.form-elements__logo(src=require("root/images/logo_gray.svg").default, alt="logo")
+			.form-elements__container
+				.form-elements__columns
+					.form-elements__fields-wrapper
+						.form-elements__field-default
+							+field({placeholder: "Email", label: true, label_text: "Text Field"})
+						.form-elements__field-hover-focus
+							+field({value: "This is pretty awesome", label: true, label_text: "Text Field"})
+						.form-elements__dropdown-default
+							+dropdown({
+								type: "default", 
+								list: ['взрослые', 'дети', 'младенцы'], 
+								buttons: true, title: "dropdown", 
+								size: "large", id: 1,
+								placeholder: "Сколько гостей"})
+						.form-elements__field-masked
+							+field({masked: true, placeholder: "ДД.ММ.ГГГГ", label: true, label_text: "masked text field", size: "default", id: 2})
+						.form-elements__dropdown-date
+							+dropdown({
+								type: "date", 
+								buttons: true, 
+								placeholder: "ДД.ММ.ГГГГ", 
+								title: ["date dropdown","date dropdown"], 
+								size: "small", 
+								id: 3})
+						.form-elements__dropdown-filter
+							+dropdown({type: "filter", placeholder: "ММ-ММ", buttons: true, title: "filter date dropdown", size: "medium", id: 4})
+						.form-elements__field-subscription
+							+field({placeholder: "Email", arrow: true, label: true, label_text: "subscription text field", size: "medium"})
+					.form-elements__inputs-wrapper
+						.form-elements__checkboxes
+							span.form-elements__checkboxes-title Checkbox Buttons
+							.form-elements__checkbox
+								+checkbox({text: "Можно курить"})
+							.form-elements__checkbox
+								+checkbox({text: "Можно с питомцами"})
+							.form-elements__checkbox
+								+checkbox({text: "Можно пригласить гостей (до 10 человек)"})
+						.form-elements__radio-buttons
+							span.form-elements__radio-buttons-title Radio Buttons
+							.form-elements__radio-button
+								+radio({text: "Мужчина"})
+							.form-elements__radio-button
+								+radio({text: "Женщина"})
+						.form-elements__toggles
+							span.form-elements__toggles-title Toggle
+							.form-elements__toggle(class="form-elements__toggle_checked")
+								+toggle({text: "Получать спецпредложения", checked: true})
+							.form-elements__toggle
+								+toggle({text: "Получать спецпредложения", checked: false})
+						.form-elements__likes
+							span.form-elements__likes-title like button
+							.form-elements__like
+								+like({checked: false, count: 2})
+							.form-elements__like(class="form-elements__like_checked")
+								+like({checked: true, count: 12})
+						.form-elements__rate-buttons
+							span.form-elements__rate-buttons-title rate button
+							.form-elements__rate-button
+								+rate({count: 5, fill: 4})
+							.form-elements__rate-button(class="form-elements__rate-button_fulled")
+								+rate({count: 5, fill: 5})
+					.form-elements__buttons-wrapper
+						.form-elements__range-slider
+							.range-slider-wrapper
+								span.form-elements__range-slider-title Range slider
+						.form-elements__buttons
+							span.form-elements__buttons-title buttons
+							.form-elements__button(class="form-elements__button_theme-full")
+								+button({theme: "full", size: "small", arrow: false, link_text: "click me", color: "white"})
+							.form-elements__button(class="form-elements__button_theme-transparent")
+								+button({theme: "transparent", size: "small", arrow: false, link_text: "click me", color: "purple"})
+							.form-elements__button(class="form-elements__button_theme-none form-elements__button_color-purple")
+								+button({theme: "none", size: "small", arrow: false, link_text: "click me", color: "purple"})
+							.form-elements__button(class="form-elements__button_theme-none form-elements__button_color-gray")
+								+button({theme: "none", size: "small", arrow: false, link_text: "click me", color: "gray"})
+							.form-elements__button(class="form-elements__button_size-large")
+								+button({theme: "full", size: "large", arrow: true, link_text: "перейти к оплате", color: "white"})
+						.form-elements__pagination
+							span.form-elements__pagination-title pagination
+							+pagination({start: 1, end: 15, total: "100+"})
+				.form-elements__dropdowns-wrapper
+					.form-elements__dropdown-things
+						+dropdown({
+								type: "default", 
+								list: ["спальни", "кровати", "ванные комнаты"], 
+								buttons: false, title: "dropdown", 
+								size: "medium", id: 5,
+								placeholder: "Выберите удобства"})
+					.form-elements__dropdown-guests
+						+dropdown({
+								type: "default", 
+								list: ["взрослые", "дети", "младенцы"], 
+								buttons: true, title: "dropdown", 
+								size: "large", id: 6,
+								placeholder: "Сколько гостей"})
+				.form-elements__lists-wrapper
+					.form-elements__checkbox-list
+						+checkbox-list({name: "expandable checkbox-list"})
+					.form-elements__checkbox-rich
+						+checkbox-rich({
+							items: ['Широкий коридор', 'Помощник для инвалидов'], 
+							descriptions: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.'], 
+							title: "rich Checkbox Buttons"})
+					.form-elements__bullet-list
+						+bullet-list({
+							items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"], 
+							title: "bullet list"})
+				.form-elements__footer
+					.form-elements__room-details
+						+room-details({
+							images: ["insert_emoticon", "location_city"], 
+							categories: ["Комфорт", "Удобство"], 
+							descriptions: ["Шумопоглощающие стены", "Окно в каждой из спален"]})
+					.form-elements__review
+						+review({
+							name: "Мурад Сарафанов", 
+							time: "5 дней назад", 
+							comment: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+							И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`})
