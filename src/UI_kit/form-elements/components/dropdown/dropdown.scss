@@ -221,9 +221,9 @@
 .datepicker-inline {
 	.datepicker {
 			&__date-type_from-to {
-			width: 255px;
-			top: 40px;
-			left: -285px;
+			width: 255px !important;
+			top: 40px !important;
+			left: -285px !important;
 		}
 	}
 }
