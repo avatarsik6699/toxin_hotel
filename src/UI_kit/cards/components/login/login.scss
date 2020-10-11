@@ -1,59 +1,54 @@
 @import 'FEcomponents/field/field';
 @import 'FEcomponents/button/button';
-
 .login {
-    $root : &;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	max-width: 380px;
+	margin: 50px;
+	padding: 40px 29px 30px 28px;
+	
+	&__title {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 30px;
+		color: #1F2041;
+		margin-bottom: 19px;
+	}
 
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    max-width: 304px;
-    margin: 25px;
-    padding: 28px 23px 24px 22px;
+	&__email {
+		margin-bottom: 11px;
+	}
 
-    &__title {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 30px;
-        color: #1F2041;
-        letter-spacing: 0.4px;
-        margin-bottom: 12px;
-    }
+	&__password {
+		margin-bottom: 19px;
+	}
 
-    &__email {
-        margin-bottom: 8px;
-    }
+	&__login-button {
+		margin-bottom: 28px;
+	}
 
-    &__password {
-        margin-bottom: 16px;
-    }
+	&__footer {
+		display: flex;
+    align-items: center;
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
 
-    &__login-btn {
-        margin-bottom: 22px;
-    }
+	&__footer-text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+	}
 
-    &__footer {
-        display: flex;
-        justify-content: space-between;
-
-        #{$root}__footer-text {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 11px;
-            line-height: 18px;
-            display: flex;
-            align-items: center;
-            color: #000000;
-            letter-spacing: 0.1px;
-        }
-
-        #{$root}__footer-create {
-            padding-top: 1px;
-        }
-    }
+	&__footer-create {
+		flex-basis: 98px;
+	}
 }
