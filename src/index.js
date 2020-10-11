@@ -1,10 +1,11 @@
 import './style.scss';
 
 import { Dropdown } from 'FEcomponents/dropdown/dropdown';
+
 // import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
 // import 'FEcomponents/range-slider/range-slider';
-// const find_room_dropdown_date = new Dropdown('div.dropdown-wrapper[data-id="1"]', {})
-// const find_room_dropdown_default = new Dropdown('div.dropdown[data-id="2"]', {
+// const booking_dropdown_date = new Dropdown('div.dropdown-wrapper[data-id="booking_1"]', {})
+// const booking_dropdown_default = new Dropdown('div.dropdown[data-id="booking_2"]', {
 //   exceptions: ['взрослые', 'дети'],
 //   exceptionDeclension: 'гости',   
 //   declensions: {

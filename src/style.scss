@@ -28,27 +28,3 @@
 *::after {
     box-sizing: inherit;
 }
-
-.find-room {
-	max-width: 381px;
-	padding: 39px 29px 27px 30px;
-	background: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-	
-	&__title {
-	font: normal bold 24px/30px Montserrat;
-	color: #1F2041;
-	letter-spacing: -0.4px;
-	margin-bottom: 16px;
-	}
-
-	&__dates {
-		margin-bottom: 16px;
-	}
-
-	&__guests {
-		margin-bottom: 29px;
-	}
-}

@@ -1,33 +1,35 @@
 include UI_kit/form-elements/components/dropdown/dropdown
 include UI_kit/form-elements/components/button/button
-mixin  booking(options)
-    -
-        let items_costs = ["39 960₽", "0₽", "300₽"]
-        let items_descriptions = ["9 990₽ х 4 суток", "Сбор за услуги: скидка 2 179₽", "Сбор за дополнительные услуги"]
-    .booking
-        .booking__title
-            .booking__number
-                span.booking__number-icon № 
-                |888
-                .booking__type
-                    +button({theme: 'none', size: 'small', arrow: false, text: 'люкс', textColor: 'purple'})
-            .booking__price
-                |9 990₽
-                span.booking__time  в сутки
-        .booking__dates
-            +dropdown({size: 'small', type: 'date', placeholder: "ДД.ММ.ГГГГ", title: ["прибытие", "выезд"], id: 1})
-        .booking__guests
-            +dropdown({size: 'large', type: 'default', placeholder: "Сколько гостей", title: "гости", id: 2})
-        .booking__items
-            each item, index in items_descriptions
-                .booking__item
-                    .booking__description
-                        span.booking__description-text= item
-                        span.booking__description-detail i
-                    span.booking__cost= items_costs[index]
-        .booking__total
-            span.booking__total-text Итого
-            .booking__total-line
-            span.booking__total-cost 38 081₽
-        .booking__btn
-            +button({theme: 'full', size: 'large', arrow: true, text: 'забронировать', textColor: 'white'})
+mixin booking(options = {})
+	-
+		const items_costs = ["39 960₽", "0₽", "300₽"]
+		const items_descriptions = ["9 990₽ х 4 суток", "Сбор за услуги: скидка 2 179₽", "Сбор за дополнительные услуги"]
+		const items_without_detail = [0]
+	.booking
+		.booking__title
+			.booking__number
+				span.booking__number-icon №
+				|888
+				.booking__type
+					+button({theme: 'none', size: 'small', arrow: false, link_text: 'люкс', color: 'purple'})
+			.booking__price
+				|9 990₽
+				span.booking__time  в сутки
+		.booking__dates
+			+dropdown({size: 'small', type: 'date', placeholder: "ДД.ММ.ГГГГ", title: ["прибытие", "выезд"], id: "booking_1"})
+		.booking__guests
+			+dropdown({size: 'large', type: 'default', placeholder: "Сколько гостей", title: "гости", id: "booking_2", buttons: true})
+		.booking__items
+			each item, index in items_descriptions
+				.booking__item
+					.booking__description
+						span.booking__description-text= item
+						-if(!items_without_detail.includes(index))
+							span.booking__description-detail i
+					span.booking__cost= items_costs[index]
+		.booking__total
+			span.booking__total-text Итого
+			.booking__total-line
+			span.booking__total-cost 38 081₽
+		.booking__button
+			+button({theme: 'full', size: 'large', arrow: true, link_text: 'забронировать', color: 'white'})

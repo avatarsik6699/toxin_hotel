@@ -1,4 +1,4 @@
 mixin button(options = {theme: "transparent", size: "small", arrow: false, link_text: "click me", color: "purple"})
 	.button(class=`button_theme-${options.theme} button_size-${options.size}`)
 		.button__wrapper(class=`button__wrapper_theme-${options.theme} button__wrapper_arrow-${options.arrow || false}`)
-			a.button__link(class=`button__link_color-${options.color}` href="#")= options.link_text
+			a.button__link(class=`button__link_color-${options.color} button__link_theme-${options.theme}` href="#")= options.link_text
