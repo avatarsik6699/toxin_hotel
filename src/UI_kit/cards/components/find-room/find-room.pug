@@ -1,11 +1,16 @@
 include UI_kit/form-elements/components/dropdown/dropdown
 include UI_kit/form-elements/components/button/button
-mixin find-room(options = {title: "Найдём номера под ваши пожелания"})
-    .find-room
-        .find-room__title= options.title
-        .find-room__dates
-            +dropdown({size: "small", type: "date", placeholder: "ДД.ММ.ГГГГ", title: ['прибытие', 'выезд'], id: 1})
-        .find-room__guests
-            +dropdown({size: "large", type: "default", placeholder: "Сколько гостей", title:"Гости", buttons: true, id: 2})
-        .find-room__find
-            +button({theme: 'full', size: 'large', arrow: true, text: 'Подобрать номер', textColor: 'white'})
+mixin find-room(options = {})
+	.find-room
+		.find-room__title= options.title
+		.find-room__dates
+			+dropdown({size: "small", type: "date", placeholder: "ДД.ММ.ГГГГ", title: ["прибытие", "выезд"], id: 1})
+		.find-room__guests
+				+dropdown({
+						type: "default", 
+						list: ["взрослые", "дети", "младенцы"], 
+						buttons: true, title: "Гости", 
+						size: "large", id: 2,
+						placeholder: "Сколько гостей"})
+		.find-room__find
+			+button({theme: "full", size: "large", arrow: true, link_text: "Подобрать номер", color: "white"})

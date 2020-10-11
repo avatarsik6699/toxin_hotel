@@ -1,6 +1,6 @@
 .button {
 	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	padding: 2px 3px;
+	padding: 3px 2px 2px 2px;
 	border-radius: 3em;
 	text-align: center;
 	max-width: 104px;
@@ -18,14 +18,18 @@
 		display: inline-block;
 		padding: 0;
 	}
+
+	&_theme-none:hover {
+		color: rgba(31, 32, 65, 0.5);
+	}
 	
 	&_size-small {
-		max-width: 104px;
+		max-width: 99px;
 	}
 
 	&_size-large {
 		display: block;
-		max-width: 341px;
+		max-width: 321px;
 	}
 
 	&__wrapper {
@@ -61,11 +65,11 @@
 
 	&__link {
 		display: block;
-		font:normal bold 12px/42px Montserrat;
+		font: normal bold 12px/41px Montserrat;
     text-transform: uppercase;
 		color: #FFFFFF;
     text-decoration: none;
-		letter-spacing: 0.5px;
+		letter-spacing: -0.2px;
 	}
 
 	&__link_color-white {

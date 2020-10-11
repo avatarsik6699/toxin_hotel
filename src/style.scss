@@ -1,13 +1,26 @@
-@import "~normalize.css";
-@import "~material-icons/iconfont/material-icons.scss";
-@import "./fonts/fonts";
-@import 'FEcomponents/field/field';
+@import '~normalize.css';
+@import './fonts/fonts';
+@import 'FEcomponents/bullet-list/bullet-list';
 @import 'FEcomponents/button/button';
+@import 'FEcomponents/checkbox/checkbox';
+@import 'FEcomponents/checkbox-list/checkbox-list';
+@import 'FEcomponents/checkbox-rich/checkbox-rich';
+@import 'FEcomponents/dropdown/dropdown';
+@import 'FEcomponents/field/field';
+@import 'FEcomponents/like/like';
+@import 'FEcomponents/pagination/pagination';
+@import 'FEcomponents/radio/radio';
+@import 'FEcomponents/range-slider/range-slider';
+@import 'FEcomponents/rate/rate';
+@import 'FEcomponents/review/review';
+@import 'FEcomponents/room-details/room-details';
+@import 'FEcomponents/toggle/toggle';
 @import "root/UI_kit/cards/components/calendar/calendar";
+
 :root {
     font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    // background: #E5E5E5;
+    background: #E5E5E5;
 }
 
 *,
@@ -16,53 +29,26 @@
     box-sizing: inherit;
 }
 
-.form-elements {
+.find-room {
+	max-width: 381px;
+	padding: 39px 29px 27px 30px;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
 	
-	&__container {
-    max-width: 1440px;
-    margin: 0 auto;
+	&__title {
+	font: normal bold 24px/30px Montserrat;
+	color: #1F2041;
+	letter-spacing: -0.4px;
+	margin-bottom: 16px;
 	}
 
-	&__logo {
-		width: 51px;
+	&__dates {
+		margin-bottom: 16px;
 	}
 
-	&__first-column {
-		display: flex;
-		flex-flow: column wrap;
+	&__guests {
+		margin-bottom: 29px;
 	}
-
-	&__field-default {
-			position: relative;
-			display: inline-block;
-			max-width: 341px;
-			&::after {
-				content: 'Default';
-				font: 12px/15px Montserrat;
-				text-transform: uppercase;
-				color: rgba(31, 32, 65, 0.5);	
-				position: absolute;
-				right: 0px;
-				top: 0px;
-			}
-	}
-
-	&__field-hover-focus {
-		position: relative;
-		display: inline-block;
-		max-width: 341px;
-		&::after {
-			content: 'Hover / Focus';
-			font: 12px/15px Montserrat;
-			text-transform: uppercase;
-			color: rgba(31, 32, 65, 0.5);	
-			position: absolute;
-			right: 0px;
-			top: 0px;
-		}
-	}
-}
-
-.container {
-	margin-left: 50px;
 }

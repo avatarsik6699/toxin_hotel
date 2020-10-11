@@ -1,68 +1,60 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-:root {
-    font-size: 10px;
-    box-sizing: border-box;
-}
-
 .pagination {
-    width: 193px;
-}
+	max-width: 240px;
 
-.pagination__pages {
-    display: flex;
-}
-
-.pagination__page {
-    width: 32px;
-    height: 32px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    line-height: 15px;
-    display: flex;
+	&__pages {
+		display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    justify-content: space-between;
+	}
 
+	&__page {
+		font: normal normal 12px/1.2 Montserrat;
+		text-decoration: none;
+    text-align: center;
     color: rgba(31, 32, 65, 0.5);
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    padding-top: 11.6px;
+	}
 
-    &_current {
-        color: #FFFFFF;
-        font-weight: bold;
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        border-radius: 22px;
-    }
-}
+	&__page:not(&__page_disabled):hover {
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		opacity: .5;
+		border-radius: 22px;
+		color: #fff;
+	}
 
-.pagination__next {
-    width: 32px;
-    height: 32px;
+	&__page_current {
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 22px;
+		color: #fff;
+	}
+	
+	&__next {
+		width: 40px;
+    height: 40px;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 22px;
-    border: transparent;    
-}
+		border: none;
+		cursor: pointer;
+	}
 
-.pagination__arrow {
-    fill: #fff;
-    width: 26px;
-    height: 24px;
-}
+	&__next:hover {
+		opacity: .5;
+	}
 
-.pagination__total {
-    font-family: Montserrat;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 24px;
+	&__arrow {
+		width: 28px;
+		height: 30px;
+		fill: #fff;
+		stroke: none;
+	}
+
+	&__total {
+		font: normal normal 14px/24px Montserrat;
     color: rgba(31, 32, 65, 0.75);
-    letter-spacing: 0.1px;
-    padding: 4px 0 0 0;
-    text-align: center;
+    padding-left: 5px;
+    padding-top: 7px;
+	}
 }

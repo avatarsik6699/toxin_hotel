@@ -1,0 +1,68 @@
+@import 'FEcomponents/checkbox/checkbox';
+.checkbox-list {
+	max-width: 250px;
+	position: relative;
+	display: inline-block;
+	padding-right: 57px;
+
+	&__check {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+		top: 0;
+		right: 0;
+	}
+	&__expand-icon {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__expand-icon::after {
+		content: '';
+		position: absolute;
+		background-image: url('/images/expand.svg');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+		width: 12px;
+		height: 18px;
+		top: 0;
+		right: 0px;
+		transition: height .3s ease, opacity .3s ease;
+		transform: rotate(0deg);
+	}
+
+	&__panel {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+	}
+
+	&__items {
+		position: absolute;
+		text-transform: none;
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		transition: all .4s ease;
+	}
+	&__item:first-child {
+		margin-top: 17px;
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 12.3px;
+	}
+
+	&__check:checked ~ &__expand-icon::after {
+		transform: rotate(180deg);
+	}
+
+	&__check:checked ~  &__items {
+		opacity: 1;
+		height: auto;
+		overflow: visible;
+	}
+}

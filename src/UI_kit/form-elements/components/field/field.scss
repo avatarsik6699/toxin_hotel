@@ -1,17 +1,17 @@
 .field {
-	max-width: 341px;
+	max-width: 32s1px;
 
 	&_size-medium {
-		max-width: 284px;
+		max-width: 266px;
 	}
 
 	&__label {
     font: bold 13px/15px Montserrat, Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     color: #1F2041;
-		letter-spacing: -0.1px;
+		letter-spacing: -0.6px;
     display: inline-block;
-		margin-bottom: 7px;
+		margin-bottom: 6px;
 	}
 
 	&__input-wrapper {
@@ -25,9 +25,10 @@
 		border-radius: 4px;
 		background: transparent;
 		
-		font: 1.071rem/2.97 Montserrat, Arial, Helvetica, sans-serif;
+		font: 1.071rem/2.8 Montserrat, Arial, Helvetica, sans-serif;
     color: rgba(31, 32, 65, 0.75);
-    text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		letter-spacing: -0.6px;
 	}
 
 	&__input::placeholder {

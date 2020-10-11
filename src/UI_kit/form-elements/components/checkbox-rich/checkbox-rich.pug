@@ -1,19 +1,13 @@
-include UI_kit/form-elements/components/checkbox/checkbox
+include ../checkbox/checkbox
 mixin checkbox-rich(options = {items: [], descriptions: [], title: "rich Checkbox Buttons"})
-    -
-        let items = options.items 
-        ? options.items
-        : ['Широкий коридор', 'Помощник для инвалидов']
-        
-        let descriptions = options.descriptions 
-        ? options.descriptions 
-        : ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']
-    
-    .checkbox-rich
-        span.checkbox-rich__title= options.title
-        .checkbox-rich__items
-            each item, index in items      
-                .checkbox-rich__item
-                    .checkbox-rich__checkbox
-                        +checkbox({text: item, weight: 'bold'})
-                    p.checkbox-rich__description= descriptions[index]
+	-
+		const items = options.items || ['Широкий коридор', 'Помощник для инвалидов']
+		const descriptions = options.descriptions || ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']
+	.checkbox-rich
+		span.checkbox-rich__title= options.title
+		.checkbox-rich__items
+			each item, index in items
+				.checkbox-rich__item
+					.checkbox-rich__checkbox
+						+checkbox({text: item, weight: 'bold'})
+					p.checkbox-rich__description= descriptions[index]

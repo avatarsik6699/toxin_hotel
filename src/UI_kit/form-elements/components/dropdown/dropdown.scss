@@ -11,12 +11,15 @@
 
 .dropdown {	
 	max-width: 267px;
+
 	&_size-large {
 		max-width: 321px;
 	}
+
 	&_size-small {
 		max-width: 150px;
 	}
+	
 	&_size-medium {
 		max-width: 266px;
 	}
@@ -43,10 +46,10 @@
 		background-image: url('/images/expand.svg');
 		background-position: center center;
 		background-size: cover;
-		width: 14px;
-    height: 8px;
+    width: 13px;
+    height: 7px;
     top: 19px;
-		right: 17px;
+    right: 15px;
 		transition: all .2s ease;
 		z-index: -1;
 	}
@@ -218,9 +221,9 @@
 .datepicker-inline {
 	.datepicker {
 			&__date-type_from-to {
-			width: 255px;
-			top: 40px;
-			left: -285px;
+			width: 255px !important;
+			top: 40px !important;
+			left: -285px !important;
 		}
 	}
 }
