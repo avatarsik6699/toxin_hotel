@@ -3,113 +3,86 @@
 @import 'FEcomponents/toggle/toggle';
 @import 'FEcomponents/radio/radio';
 @import "root/UI_kit/cards/components/calendar/calendar";
-
 .registration {
-    $root: &;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	max-width: 381px;
+	padding: 40px 29px 29px 29px;
 
-    max-width: 305px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    margin: 20px;
-    padding: 36px 24px 23px 24px;
+	&__title {
+		font: normal bold 24px/30px Montserrat;
+    color: #1F2041;
+		letter-spacing: -0.5px;
+		margin-bottom: 20px;
+	}
 
-    &__title {
-        font-family: Montserrat, Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 18px;
-        color: #1F2041;
-        letter-spacing: 0.28px;
-        margin-bottom: 19px;    
-    }
+	&__name {
+		margin-bottom: 11px;
+	}
 
-    &__name {
-        margin-bottom: 7px;
+	&__surname {
+		margin-bottom: 8px;
+	}
 
-    }
+	&__gender {
+		display: flex;
+    justify-content: space-between;
+		max-width: 68.7%;
+		flex-flow: row wrap;
+		margin-bottom: 23px;
+	}
 
-    &__surname {
-        margin-bottom: 3px;
-    }
+	&__birthday {
+		margin-bottom: 20px;
+	}
 
-    &__gender {
-        display: flex;
-        margin-bottom: 14px;
-        #{$root}__gender-male {
-            margin-right: 15px;
-        }
-    }
+	&__birthday-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+    margin-bottom: 5px;
+	}
 
-    &__birth-day {
-        margin-bottom: 16px;
-        #{$root}__birth-day-title {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 10px;
-            line-height: 15px;
-            text-transform: uppercase;
-            color: #1F2041;
-            letter-spacing: -0.3px;
-            margin-bottom: 3px;
-            display: block;
-        }
-    }
+	&__login {
+		margin-bottom: 6px;
+	}
 
-    &__login-data {
-        #{$root}__login-data-title {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 10px;
-            line-height: 12px;
-            text-transform: uppercase;
-            color: #1F2041;
-            letter-spacing: -0.27px;
-            display: block;
-            margin-bottom: 3px;
-        }
+	&__login-title {
+		font: normal bold 12px/15px Montserrat;
+    text-transform: uppercase;
+		color: #1F2041;
+		display: block;
+		margin-bottom: 6px;
+	}
 
-        #{$root}__email {
-            margin-bottom: 7px;
-        }
+	&__email {
+		margin-bottom: 11px;
+	}
 
-        #{$root}__password {
-            margin-bottom: 9px;
-        }
-    }
+	&__special-offet {
+		margin-bottom: 22px;
+	}
 
-    &__special-offer {
-        padding-left: 2px;
-        margin-bottom: 17px;
-    }
+	&__pay {
+		margin-bottom: 28px;
+	}
 
-    &__pay {
-        padding-left: 1px;
-        margin-bottom: 24px;
-    }
+	&__footer {
+		display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+	}
 
-    &__footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 101%;
+	&__footer-text {
+		font: normal normal 14px/18px Montserrat;
+    color: #000000;
+	}
 
-        #{$root}__footer-text {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 11px;
-            line-height: 30px;
-            color: rgba(31, 32, 65, 0.75);
-            letter-spacing: 0.14px;
-        }
-    }
-}
-
-.datepicker__date-type_masket {
-    position: absolute;
-    width: 255px;
+	&__footer-login {
+		flex-basis: 100px;
+	}
 }

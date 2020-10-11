@@ -3,31 +3,31 @@ include UI_kit/form-elements/components/field/field
 include UI_kit/form-elements/components/toggle/toggle
 include UI_kit/form-elements/components/radio/radio
 mixin registration(options = {title: "Регистрация аккаунта"})
-    .registration
-        .registration__title= options.title
-        .registration__name
-            +field({type: "text", placeholder: "Имя", size: 'large', arrow: false})
-        .registration__surname
-            +field({type: "text", placeholder: "Фамилия", size: 'large', arrow: false} )
-        .registration__gender
-            .registration__gender-male
-                +radio({text: 'Мужчина', name: 'default'})
-            .registration__gender-female
-                +radio({text: 'Женщина', name: 'default'})
-        .registration__birth-day
-            span.registration__birth-day-title дата рождения
-            +field({type: "text", placeholder: "ДД.ММ.ГГГГ", dataType: "masked", size: 'large', id: 1, arrow: false} )
-        .registration__login-data
-            span.registration__login-data-title данные для входа в сервис
-            .registration__email
-                +field({type: "email", placeholder: "Email", size: 'large', arrow: false})
-            .registration__password
-                +field({type: "password", placeholder: "Пароль", size: 'large', arrow: false} )
-        .registration__special-offer
-            +toggle({text: "Получать спецпредложения", checked: false})
-        .registration__pay
-            +button({theme: "full", size: "large", arrow: true, text: 'Перейти к оплате', textColor: "white"})
-        .registration__footer
-            span.registration__footer-text Уже есть аккаунт на Toxin
-            .registration__footer-login
-                +button({theme: 'transparent', size: 'small', arrow: false, text: 'войти', textColor: "purple"})
+	.registration
+		.registration__title= options.title
+		.registration__name
+			+field({type: "text", placeholder: "Имя", size: 'large', arrow: false})
+		.registration__surname
+			+field({type: "text", placeholder: "Фамилия", size: 'large', arrow: false})
+		.registration__gender
+			.registration__gender-male
+				+radio({text: 'Мужчина', name: 'default'})
+			.registration__gender-female
+				+radio({text: 'Женщина', name: 'default'})
+		.registration__birthday
+			span.registration__birthday-title дата рождения
+			+field({type: "text", placeholder: "ДД.ММ.ГГГГ", dataType: "masked", size: 'large', id: "registration_1", arrow: false})
+		.registration__login
+			span.registration__login-title данные для входа в сервис
+			.registration__email
+				+field({type: "email", placeholder: "Email", size: 'large', arrow: false})
+			.registration__password
+				+field({type: "password", placeholder: "Пароль", size: 'large', arrow: false})
+		.registration__special-offer
+			+toggle({text: "Получать спецпредложения", checked: false})
+		.registration__pay
+			+button({theme: "full", size: "large", arrow: true, link_text: 'Перейти к оплате', color: "white"})
+		.registration__footer
+			span.registration__footer-text Уже есть аккаунт на Toxin
+			.registration__footer-login
+				+button({theme: 'transparent', size: 'small', arrow: false, link_text: 'войти', color: "purple"})

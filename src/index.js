@@ -1,8 +1,15 @@
 import './style.scss';
-
+import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
 import { Dropdown } from 'FEcomponents/dropdown/dropdown';
+// new Calendar('input[data-id="registration_1"]', {
+//   range: false,
+//   multipleDates: false,
+//   multipleDatesSeparator: " - ",
+//   offset: 5,
+//   position: "bottom right",
+//   classes: 'datepicker__date-type_masket',
+// });
 
-// import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
 // import 'FEcomponents/range-slider/range-slider';
 // const booking_dropdown_date = new Dropdown('div.dropdown-wrapper[data-id="booking_1"]', {})
 // const booking_dropdown_default = new Dropdown('div.dropdown[data-id="booking_2"]', {
