@@ -1,11 +1,12 @@
 import './style.scss';
 import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
-// import { Dropdown } from 'FEcomponents/dropdown/dropdown';
+import 'root/UI_kit/cards/components/find-room/find-room.js';
+import 'root/UI_kit/cards/components/booking/booking.js';
 
-// new Calendar('.calendar', {
+// const cards__calendar = new Calendar('.cards__calendar', {
 //   inline: true,
 // });
-
+// cards__calendar.show()
 // import 'FEcomponents/range-slider/range-slider';
 // const booking_dropdown_date = new Dropdown('div.dropdown-wrapper[data-id="booking_1"]', {})
 // const booking_dropdown_default = new Dropdown('div.dropdown[data-id="booking_2"]', {

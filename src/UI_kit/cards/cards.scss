@@ -1,0 +1,52 @@
+.cards {
+	&__find-room {
+        grid-area: find-room;
+    }
+
+    &__booking {
+			grid-area: booking;
+			justify-self: center;	
+    }
+
+    &__calendar-wrapper {
+			grid-area: calendar;
+			align-self: start;
+    }
+
+    &__registration {
+        grid-area: registration;
+    }
+
+    &__login {
+				grid-area: login;
+				align-items: center;
+    }
+
+    &__rooms {
+				grid-area: rooms;
+				grid-area: rooms;
+				display: flex;
+				flex-flow: column;
+		}
+		
+		&__room-one {
+			margin-bottom: 43px;
+		}
+
+	&__container {
+		max-width: 1453px;
+    margin: 0 auto;
+    /* grid-gap: 0px; */
+    display: grid;
+    justify-content: center;
+    grid-row-gap: 8px;
+		grid-template-columns: 26.7% 33% 20%;
+    grid-template-rows: 37.9% 8% 31% 7% 5%;
+    grid-template-areas:
+        "find-room booking calendar"
+        "registration booking rooms"
+        "registration login rooms"
+        "registration login rooms"
+        "registration . .";
+	}
+}

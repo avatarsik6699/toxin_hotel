@@ -3,6 +3,7 @@ require('air-datepicker');
 export class Calendar {
     constructor(anchor, options) {
         this.anchor = anchor;
+        this.showing = false;
         this.init(options);
         this.calendar = $(anchor).data('datepicker').$datepicker;
         this.createClearBtn()
@@ -41,6 +42,7 @@ export class Calendar {
     }
     
     clickOutCalendar(e) {
+        if (this.showing) return;
         if (this.calendarIsNotDisplay()) return;
         if (this.clickInCalendar(e)) return;
         this.calendar.hide();
@@ -86,5 +88,10 @@ export class Calendar {
         const clearBtn = `<span class="datepicker--button" data-action="apply">Применить</span>`;
         
         calendarButtons.insertAdjacentHTML('beforeend', clearBtn);
+    }
+
+    show() {
+        this.calendar.show();
+        this.showing = true;
     }
 }
