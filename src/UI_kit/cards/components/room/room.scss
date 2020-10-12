@@ -1,104 +1,151 @@
 @import 'FEcomponents/button/button';
 @import 'FEcomponents/rate/rate';
 .room {
-    $root: &;
+	background: #FFFFFF;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 4px;
+	max-width: 271px;
 
-    background: #FFFFFF;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    border-radius: 4px;
-    max-width: 216px;
-    margin: 50px;
-    padding-bottom: 15px;
+	&__preview {
+		position: relative;
+	}
 
+	&__preview-img {
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		width: 100%;
+	}	
+	
+	&__preview-link:hover ~ &__prev{
+		opacity: .8;
+	}
 
-    &__preview {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
-        margin-bottom: 18px;
+	&__preview-link:hover ~ &__next{
+		opacity: .8;
+	}
+	
+	&__prev {
+		position: absolute;
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+		top: 0;
+		left: 0;
+		bottom: 4px;
+		width: 42px;
+		display: flex;
+		align-items: center;
+		flex-flow: row wrap;
+		opacity: 0;
+		transition: opacity .5s ease;
+	}
 
-        #{$root}__preview-img {
-            width: 100%;
-            border-top-right-radius: 4px;
-            border-top-left-radius: 4px;
-        }
-    }
+	&__prev:hover {
+		opacity: .8;
+	}
 
-    &__info {
-        display: flex;
-        align-items: center;
-        margin-left: 16px;
-        margin-right: 13px;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        padding-bottom: 8px;
-        margin-bottom: 7px;
-     
+	&__prev-img {
+		transform: rotate(90deg);
+	}
 
-        #{$root}__number {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 13px;
-            line-height: 17px;
-            color: #1F2041;
+	&__next {
+		position: absolute;
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+		transform: matrix(-1, 0, 0, 1, 0, 0);
+		top: 0;
+		right: 0;
+		bottom: 4px;
+		width: 42px;
+		display: flex;
+		align-items: center;
+		flex-flow: row wrap;
+		opacity: 0;
+		transition: opacity .5s ease;
+	}
 
-            #{$root}__info-icon {
-                font-size: 10px;
-                line-height: 17px;
-                margin-right: 5px;
-            }
-        }
+	&__next:hover {
+		opacity: .8;
+	}
 
-        #{$root}__type {
-            margin-left: -20px;
-            padding-top: 3px;
-            margin-right: 2px;
-        }
-        
-        #{$root}__price {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 11px;
-            line-height: 18px;
-            color: rgba(31, 32, 65, 0.5);
+	&__next-img {
+		transform: rotate(90deg);
+	}
 
-            #{$root}__price-time {
-                font-size: 10px;
-                font-weight: 400;
-                letter-spacing: -0.2px;
-            }
-        }
-    }
+	&__links {
+		position: absolute;
+    bottom: 21px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    border-radius: 10px;
+    width: 42px;
+	}
 
-    &__characteristic {
-        display: flex;
-        margin-left: 18px;
-        margin-right: 18px;
-        justify-content: space-between;
+	&__link {
+		width: 7px;
+    height: 7px;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
+	}
 
-        #{$root}__review {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 11px;
-            line-height: 18px;
-            text-align: right;
-            color: rgba(31, 32, 65, 0.5);
+	&__link:hover {
+		opacity: .5;
+	}
 
-            #{$root}__review-number {
-                font-weight: 700;
-                margin-right: 4px;
-            }
+	&__link_checked {
+		background: #fff;
+	}
 
-            #{$root}__review-text {
-                font-weight: 400;
-                letter-spacing: -0.1px;
-            }
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		padding: 21px 18px 0px 20px;
+	}
 
-        }
-    }
+	&__number {
+		font: normal bold 17px/15px Montserrat;
+		color: #1F2041;
+		margin-right: 5px;
+	}
+
+	&__info-icon {
+		font-weight: normal;
+		font-size: 14px;
+		margin-right: 5px;
+	}
+
+	&__price {
+		font: normal bold 14px/15px Montserrat;
+		color: rgba(31, 32, 65, 0.5);
+		margin-left: 34px
+	}
+
+	&__price-time {
+		font-weight: normal;
+    margin-left: 2px;
+    font-size: 13px;
+    letter-spacing: -0.4px;
+	}
+
+	&__review {
+		padding: 22px 21px 18px 22px;
+    display: flex;
+    justify-content: space-between;
+		align-items: center;
+		flex-flow: row wrap;
+	}
+
+	&__comments-number {
+		font: normal bold 14px/18px Montserrat;
+    text-align: right;
+    color: rgba(31, 32, 65, 0.5);
+	}
+
+	&__comments-text {
+		font: normal normal 14px/18px Montserrat;
+    text-align: right;
+    color: rgba(31, 32, 65, 0.5);
+    margin-left: 4px;
+	}
 }
