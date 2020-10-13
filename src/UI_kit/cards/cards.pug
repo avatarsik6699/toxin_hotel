@@ -1,3 +1,8 @@
+include /UI_kit/cards/components/find-room/find-room
+include /UI_kit/cards/components/booking/booking
+include /UI_kit/cards/components/registration/registration
+include /UI_kit/cards/components/login/login
+include /UI_kit/cards/components/room/room
 .cards
   img.cards__logo(src=require("root/images/logo_gray.svg").default)
   .cards__container
@@ -12,7 +17,7 @@
     .cards__login
       +login({title: "Войти"})
     .cards__rooms
-      .cards__room_one
+      .cards__room-one
         +room({img: "room_1", price: "9 990₽", comments: 145, number: 888, lux: true, links: 4, fill: 5, checked: 0})
-      .cards__room_two
+      .cards__room-two
         +room({img: "room_2", price: "9 990₽", comments: 65, number: 840, lux: false, links: 4, fill: 4, checked: 0})

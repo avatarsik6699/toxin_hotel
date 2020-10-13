@@ -17,6 +17,8 @@ include /UI_kit/cards/components/booking/booking
 include /UI_kit/cards/components/registration/registration
 include /UI_kit/cards/components/login/login
 include /UI_kit/cards/components/room/room
+include /UI_kit/headers-footers/components/header/header
+include /UI_kit/headers-footers/components/footer/footer
 <!DOCTYPE html>
 html(lang="en")
 	head
@@ -24,3 +26,12 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Document
 	body
+		//- .headers-footers
+		//- 	.headers-footers__header-logout
+		//- 		+header({login: false})
+		//- 	.headers-footers__header-login
+		//- 		+header({login: true})
+		//- 	.headers-footers__footer
+		//- 		+footer({})
+		include UI_kit/cards/cards
+		

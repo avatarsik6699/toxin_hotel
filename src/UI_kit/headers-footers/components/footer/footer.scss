@@ -32,7 +32,7 @@
 
 	&__main-info::before {
 		content: '';
-		background-image: url('images/logo.svg');
+		background-image: url('/images/logo.svg');
 		width: 85px;
 		position: absolute;
 		height: 33px;
@@ -134,7 +134,7 @@
 
 			&__submenu-icons::before {
 					content: '';
-					background-image: url('images/logo.svg');
+					background-image: url('/images/logo.svg');
 					width: 85px;
 					position: absolute;
 					height: 33px;
