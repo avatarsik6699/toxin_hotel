@@ -1,5 +1,5 @@
 .field {
-	max-width: 32s1px;
+	max-width: 321px;
 
 	&_size-medium {
 		max-width: 266px;
@@ -47,6 +47,6 @@
     position: absolute;
     top: 14px;
 		right: 14px;
-		z-index: -1;
+		fill: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	}
 }

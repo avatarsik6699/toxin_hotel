@@ -1,0 +1,26 @@
+@import '/UI_kit/headers-footers/components/header/header';
+@import '/UI_kit/headers-footers/components/footer/footer';
+.headers-footers {
+  &__logo {
+      margin-top: 31px;
+      margin-bottom: 20px;
+      display: block;
+  }
+
+  &__header-logout {
+      margin-bottom: 45px;
+  }
+
+  &__header-login {
+      margin-bottom: 45px;
+  }
+
+  &__footer-desktop {
+      margin-bottom: 39px;
+  }
+
+  &__footer-mobile {
+      max-width: 1000px;
+      margin: 0 auto;
+  }
+}

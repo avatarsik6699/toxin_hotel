@@ -10,32 +10,32 @@
 	}
 
 	&__main-container {
-			display: flex;
-			margin: 0 auto;
-			flex-flow: row wrap;
-			justify-content: space-between;
-			max-width: 61.1%;
-			padding: 80px 0px 77px 0;
+		display: flex;
+		margin: 0 auto;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		max-width: 1161px;
+		padding: 100px 0px 95px 0;
 	}
 	
 	@media all and (max-width: 1172px) {
-			&__main-container {
-					flex-flow: column wrap;
-			}
+		&__main-container {
+				flex-flow: column wrap;
+		}
 	}
 
 	&__main-info {
-			position: relative;
-			flex-basis: 23%;
-			padding-top: 3.285em;
+		position: relative;
+		flex-basis: 23%;	
+		padding-top: 58px;
 	}
 
 	&__main-info::before {
 		content: '';
 		background-image: url('/images/logo.svg');
-		width: 85px;
+		width: 106px;
 		position: absolute;
-		height: 33px;
+		height: 42px;
 		background-size: 100% 100%;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -50,44 +50,47 @@
 	}
 
 	&__main-description {
-			font: 0.8rem/1.75 Montserrat;
+			font: 14px/24px Montserrat;
 			color: rgba(31, 32, 65, 0.75);
 	}
 
 	&__main-nav {
-			display: flex;
-			flex-basis: 74.1%;
-			justify-content: space-between;
-			padding-top: 0.357em;
-			flex-flow: row wrap;
+		display: flex;
+		flex-basis: 74.1602%;
+		justify-content: space-between;
+		padding-top: 0.357em;
+		flex-flow: row wrap;
 	}
 
 	&__main-items {
-			list-style-type: none;
-			flex-basis: 18%;
+		list-style-type: none;
+		flex-basis: 149px;
+	}
+
+	&__main-items:last-of-type {
+		flex-basis: 260px;
 	}
 
 	&__main-item:not(:last-child) {
-			margin-bottom: 0.785em;
+		margin-bottom: 14.2px;
 	}
 
 	&__main-header {
-			font: normal normal bold 0.64rem/1.2 Montserrat, Arial, Helvetica, sans-serif;
-			margin-bottom: 1.6em;
-			text-transform: uppercase;
-			color: #1F2041;
-			letter-spacing: 0.5px;
+		font: normal normal bold 12px/1.2 Montserrat, Arial, Helvetica, sans-serif;
+		margin-bottom: 1.6em;
+		text-transform: uppercase;
+		color: #1F2041;
 	}
 
 	&__main-link {
-			font: .8571rem/1.6 Montserrat, Arial, Helvetica, sans-serif;
-			text-decoration: none;
-			color: rgba(31, 32, 65, 0.5);
-			letter-spacing: -0.5px;
+    font: 13px/24px Montserrat, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgba(31, 32, 65, 0.5);
+    letter-spacing: 0.65px;
 	}
 
 	.footer__main-field {
-			padding-top: 0.478em;
+		padding-top: 0.478em;
 	}
 
 	&__submenu {
@@ -95,62 +98,59 @@
 	}
 
 	&__submenu-container {
-			display: flex;
-			max-width: 61.1%;
-			margin: 0 auto;
-			justify-content: space-between;
-			flex-flow: row wrap;
-			align-items: center;
-			padding: 1.24em 0em 1.07em 0em;
+		display: flex;
+		max-width: 1161px;
+		margin: 0 auto;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		align-items: center;
+		padding: 19px 0px 20px 0px;
 	}
 
 	@media all and (max-width: 1008px) {
-			&__submenu-container {
-					flex-flow: column wrap;
-					padding: 10.24em 0em 5.65em 0em;
-			}
+		&__submenu-container {
+				flex-flow: column wrap;
+				padding: 10.24em 0em 5.65em 0em;
+		}
 	}
 
 	&__submenu-text {
-			font: normal normal 0.81rem/1.2 Montserrat, Arial, Helvetica, sans-serif;
-			letter-spacing: -0.08px;
+			font: normal normal 14px/1.2 Montserrat, Arial, Helvetica, sans-serif;
 			color: rgba(31, 32, 65, 0.75);
 	}
 
 	&__submenu-icons {
-			display: flex;
-			flex-basis: 6.4em;
-			justify-content: space-between;
-			align-items: center;
-			padding-top: 0.14em;
+		display: flex;
+		flex-basis: 113px;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 3px;
 	}
 
 	@media all and (max-width: 1008px) {
-			&__submenu-icons {
-					flex-basis: 4em;
-					width: 6.4em;
-					position: relative;
-			}
+		&__submenu-icons {
+			display: flex;
+			flex-basis: 73px;
+			position: relative;
+			width: 112px;
+			flex-flow: row wrap;
+		}
 
-			&__submenu-icons::before {
-					content: '';
-					background-image: url('/images/logo.svg');
-					width: 85px;
-					position: absolute;
-					height: 33px;
-					background-size: 100% 100%;
-					background-position: center center;
-					background-repeat: no-repeat;
-					top: -63px;
-					left: 3px;
-			}
-	}
-
-	&__submenu-icon {
-			flex-basis: 1.14em;
+		&__submenu-icons::before {
+				content: '';
+				background-image: url('/images/logo.svg');
+				width: 106px;
+				position: absolute;
+				height: 42px;
+				background-size: 100% 100%;
+				background-position: center center;
+				background-repeat: no-repeat;
+				top: -79px;
+				left: 3px;
+		}
 	}
 
 	&__submenu-img {
-			width: 1.3rem;
+		width: 24px;
 	}
 }

@@ -22,7 +22,7 @@
 @import '/UI_kit/cards/components/login/login';
 @import '/UI_kit/cards/components/room/room';
 @import '/UI_kit/cards/cards';
-// @import '/UI_kit/headers-footers/components/header/header';
+@import '/UI_kit/headers-footers/components/header/header';
 @import '/UI_kit/headers-footers/components/footer/footer';
 :root {
     font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
@@ -34,4 +34,30 @@
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+.headers-footers {
+
+    &__logo {
+        margin-top: 31px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    &__header-logout {
+        margin-bottom: 45px;
+    }
+
+    &__header-login {
+        margin-bottom: 45px;
+    }
+
+    &__footer-desktop {
+        margin-bottom: 39px;
+    }
+
+    &__footer-mobile {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 }

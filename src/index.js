@@ -1,8 +1,8 @@
 import './style.scss';
-import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
-import 'root/UI_kit/cards/components/find-room/find-room.js';
-import 'root/UI_kit/cards/components/booking/booking.js';
-import 'root/UI_kit/cards/cards';
+// import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
+// import 'root/UI_kit/cards/components/find-room/find-room.js';
+// import 'root/UI_kit/cards/components/booking/booking.js';
+// import 'root/UI_kit/cards/cards';
 // const cards__calendar = new Calendar('.cards__calendar', {
 //   inline: true,
 // });
