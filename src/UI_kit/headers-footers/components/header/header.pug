@@ -1,35 +1,37 @@
 include /UI_kit/form-elements/components/button/button
 mixin header(options = {additionalProps: {}, items: [], login: true} )
-    -
-        let additionalProps = 
-        options.additionalProps || {
-            "О нас" : "header__item-link_font_weight-bold",
-            "Услуги": "header__item-link_extend-true",
-            "Соглашения": "header__item-link_extend-true"
-        }
-        let items = options.items || ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"]
-
-    header.header
-        .header__container
-            a.header__logo(href="#")
-                img.header__logo-img(src=require("root/images/logo.svg").default alt="logo")
-            nav.header__nav
-                ul.header__site-nav
-                    each item in items
-                        -
-                            var classItem = additionalProps[item] 
-                            ? `header__item-link ${additionalProps[item]}` 
-                            : 'header__item-link'
-
-                        li.header__item
-                            a(class=classItem)= item
-                ul.header__user-nav
-                    case options.login
-                        when false
-                            li.header__login
-                                +button({theme: "transparent", size: "small", arrow: false, link_text: "войти", color: "purple"})
-                            li.header__registration
-                                +button({theme: "full", size: "large", arrow: false, link_text: "зарегистрироваться", color: "white"})
-                        when true
-                            span.header__user-name
-                                a.header__user-link Юлий Цезарь   
+	-
+		const features = options.features ||
+		{
+			"О нас" : "header__item-link_weight-bold",
+			"Услуги": "header__item-link_expandable",
+			"Соглашения": "header__item-link_expandable"
+		}
+		const items = options.items || ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"]
+	
+	header.header
+		.header__container
+			a.header__logo(href="#")
+				img.header__logo-img(src=require("root/images/logo.svg").default alt="logo")
+			.header__hamburger-menu
+				input.header__menu-toggle(type="checkbox")
+				span.header__fake-toggle
+				nav.header__nav
+					ul.header__site-nav
+						each item in items
+							li.header__item
+								-
+									var itemClass = features[item]
+									? `header__item-link ${features[item]}`
+									:	'header__item-link'
+								a(class=itemClass)= item
+					ul.header__user-nav
+						case options.login
+							when false
+								li.header__login
+									+button({theme: "transparent", size: "header-small", arrow: false, link_text: "войти", color: "purple"})
+								li.header__registration
+									+button({theme: "full", size: "header-large", arrow: false, link_text: "зарегистрироваться", color: "white"})
+							when true
+								span.header__username
+									a.header__username-link Юлий Цезарь  
