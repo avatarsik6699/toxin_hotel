@@ -125,7 +125,6 @@ export class Dropdown {
         if (!this.clickOnEventElment(e)) return
 
         let funcName = this.getFuncName(e);
-            console.log(funcName)
         this[funcName](e)
     }
 
@@ -222,7 +221,6 @@ export class Dropdown {
     }
 
     eventButton(e) {
-        console.log(this.getEventValue(e));
         if (this.getEventValue(e) === 'apply') {
             this.hide();
         }
@@ -239,7 +237,6 @@ export class Dropdown {
     }
 
     sub(number, btn, field, category) {
-        console.log(btn);
         number.innerHTML = Number(number.innerHTML) - 1;
 
         this.changeField(number, this.field, category, 'sub')

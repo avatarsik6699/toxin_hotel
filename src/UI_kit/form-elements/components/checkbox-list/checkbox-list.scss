@@ -1,9 +1,9 @@
 @import 'FEcomponents/checkbox/checkbox';
 .checkbox-list {
-	max-width: 250px;
+	max-width: 266px;
 	position: relative;
 	display: inline-block;
-	padding-right: 57px;
+	padding-right: 41px;
 
 	&__check {
 		position: absolute;
@@ -12,6 +12,7 @@
 		top: 0;
 		right: 0;
 	}
+
 	&__expand-icon {
 		display: inline-block;
 		position: absolute;
@@ -28,7 +29,7 @@
 		background-position: center;
 		width: 12px;
 		height: 18px;
-		top: 0;
+		top: -1;
 		right: 0px;
 		transition: height .3s ease, opacity .3s ease;
 		transform: rotate(0deg);
@@ -38,9 +39,14 @@
 		font: normal bold 12px/15px Montserrat;
     text-transform: uppercase;
 		color: #1F2041;
+		cursor: pointer;
 	}
 
 	&__items {
+		text-transform: none;
+	}
+
+	&__items_expandable-true {
 		position: absolute;
 		text-transform: none;
 		opacity: 0;
@@ -48,6 +54,7 @@
 		overflow: hidden;
 		transition: all .4s ease;
 	}
+
 	&__item:first-child {
 		margin-top: 17px;
 	}
