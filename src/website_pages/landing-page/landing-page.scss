@@ -1,0 +1,39 @@
+@import '/UI_kit/headers-footers/components/header/header';
+@import '/UI_kit/headers-footers/components/footer/footer';
+@import '/UI_kit/cards/components/find-room/find-room';
+.landing-page {
+	&__main {
+		background-image: url('/images/main_photo.jpg'); 
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&__main-container {
+			max-width: 1163px;
+			margin: 0 auto;
+			display: flex;
+			flex-flow: column;
+	}
+
+	&__find-room {
+			flex-basis: 445px;
+			align-items: flex-end;
+			display: flex;
+	}
+	
+	&__slogan {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		flex-basis: 366px;
+		margin-right: -3px;
+		margin-bottom: 20px;
+	}
+
+	&__slogan-text {
+		font: normal normal 14px/24px Montserrat;
+			text-align: right;
+			color: rgba(31, 32, 65, 0.75);
+			max-width: 275px;
+	}
+}

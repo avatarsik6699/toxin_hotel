@@ -1,4 +1,5 @@
 import './style.scss';
+import 'root/website_pages/landing-page/landing-page';
 // import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
 // import 'root/UI_kit/cards/components/find-room/find-room.js';
 // import 'root/UI_kit/cards/components/booking/booking.js';
