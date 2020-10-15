@@ -1,0 +1,19 @@
+include /UI_kit/headers-footers/components/header/header
+include /UI_kit/headers-footers/components/footer/footer
+include /UI_kit/cards/components/registration/registration
+include /UI_kit/cards/components/signin/signin
+mixin user-page(options = {type: "signin"})
+  .user-page
+    header.user-page__header
+      +header({login: false})
+    main.user-page__main
+      .user-page__form
+        case options.type
+          when "registration"
+            .user-page__registration
+              +registration({title: "Регистрация аккаунта"})
+          when "signin"
+            .user-page__signin
+              +signin({title: "Войти"})
+    footer.user-page__footer
+      +footer({})

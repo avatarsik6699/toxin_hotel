@@ -1,5 +1,5 @@
 import './style.scss';
-import 'root/website_pages/search-room/search-room';
+// import 'root/website_pages/search-room/search-room';
 
 
 // import { Dropdown } from 'FEcomponents/dropdown/dropdown';
