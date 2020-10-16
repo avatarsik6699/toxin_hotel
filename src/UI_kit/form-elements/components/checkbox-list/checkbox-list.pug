@@ -1,12 +1,13 @@
 include ../checkbox/checkbox
-mixin checkbox-list(options = {name: "checkbox-list"})
+mixin checkbox-list(options = {name: "checkbox-list", list: []})
 	-
-		const list = ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]
+		const list = options.list || ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]
 	.checkbox-list
 		label.checkbox-list__panel= options.name
-			input.checkbox-list__check(type="checkbox")
-			span.checkbox-list__expand-icon
-			.checkbox-list__items
+			-if(options.expandable)
+				input.checkbox-list__check(type="checkbox")
+				span.checkbox-list__expand-icon
+			.checkbox-list__items(class=`checkbox-list__items_expandable-${options.expandable}`)
 				each text in list
 					.checkbox-list__item
 						+checkbox({text: text, weight: "normal"})

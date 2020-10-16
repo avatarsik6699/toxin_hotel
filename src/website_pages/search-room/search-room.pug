@@ -1,0 +1,91 @@
+include /UI_kit/headers-footers/components/header/header
+include /UI_kit/headers-footers/components/footer/footer
+include /UI_kit/form-elements/components/dropdown/dropdown
+include /UI_kit/form-elements/components/pagination/pagination
+include /UI_kit/cards/components/room/room
+include /UI_kit/form-elements/components/checkbox-list/checkbox-list
+include /UI_kit/form-elements/components/checkbox-rich/checkbox-rich
+-
+  const rooms = [
+    [888, {img: "room_1", price: "9 990₽", comments: 145, lux: true, links: 4,  checked: 0, fill: 5}],
+    [840, {img: "room_2", price: "9 990₽", comments: 65, lux: false, links: 4,  checked: 0, fill: 4}],
+    [980, {img: "room_3", price: "8 500₽", comments: 35, lux: true, links: 4,  checked: 0, fill: 3}],
+    [856, {img: "room_4", price: "7 300₽", comments: 19, lux: false, links: 4,  checked: 0, fill: 5}],
+    [740, {img: "room_5", price: "6 000₽", comments: 44, lux: false, links: 4,  checked: 0, fill: 4}],
+    [982, {img: "room_6", price: "5 800₽", comments: 56, lux: false, links: 4,  checked: 0, fill: 3}],
+    [678, {img: "room_7", price: "5 500₽", comments: 45, lux: false, links: 4,  checked: 0, fill: 5}],
+    [450, {img: "room_8", price: "5 300₽", comments: 39, lux: false, links: 4,  checked: 0, fill: 4}],
+    [350, {img: "room_9", price: "5 000₽", comments: 77, lux: false, links: 4,  checked: 0, fill: 3}],
+    [666, {img: "room_10", price: "5 000₽", comments: 25, lux: false, links: 4,  checked: 0, fill: 5}],
+    [444, {img: "room_11", price: "5 000₽", comments: 15, lux: false, links: 4,  checked: 0, fill: 3}],
+    [352, {img: "room_12", price: "5 000₽", comments: 55, lux: false, links: 4,  checked: 0, fill: 3}],
+    ]
+
+.search-room
+  header.search-room__header
+    +header({login: false})
+  .search-room__container
+    sidebar.search-room__sidebar
+      .search-room__stay-time
+        +dropdown({
+          type: "filter", 
+          placeholder: "ММ-ММ", 
+          buttons: true, 
+          title: "даты пребывания в отеле", 
+          size: "medium", 
+          id: "search-room_1"})
+      .search-room__guests
+        +dropdown({
+          type: "default", 
+          placeholder: "Сколько гостей",
+          list: ['взрослые', 'дети', 'младенцы'], 
+          buttons: true, 
+          title: "гости", 
+          size: "large", 
+          id: "search-room_2"})
+      .search-room__price
+        .range-slider-wrapper
+          span.search-room__range-slider-title диапазон цены
+        span.search-room__price-description Стоимость за сутки пребывания в номере
+      .search-room__rules
+        +checkbox-list({
+          list: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], 
+          name: "правила дома",
+          expandable: false})
+      .search-room__accessibility
+        +checkbox-rich({
+          title: "доступность",
+          items: ['Широкий коридор', 'Помощник для инвалидов'],
+          descriptions: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']
+        })
+      .search-room__comforts
+        +dropdown({
+          type: "default", 
+          list: ["спальни", "кровати", "ванные комнаты"], 
+          buttons: false, 
+          title: "удобства номера", 
+          size: "medium", id: "search-room_3",
+          placeholder: "Выберите удобства"})
+      .search-room__extracomforts
+        +checkbox-list({
+          list: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], 
+          name: "дополнительные удобства",
+          expandable: true})
+    main.search-room__main
+      h3.search-room__title Номера, которые мы для вас подобрали
+      .search-room__rooms
+        -for(let room of rooms)
+          .search-room__room
+            +room({
+              number: room[0], 
+              img: room[1]['img'], 
+              price: room[1]['price'], 
+              comments: room[1]['comments'], 
+              lux: room[1]['lux'], 
+              links: room[1]['links'],  
+              checked: room[1]['checked'], 
+              fill: room[1]['fill']})
+      .search-room__pagination
+        +pagination({start: 1, end: 15, total: "100+"})
+  footer.search-room__footer
+    +footer({})

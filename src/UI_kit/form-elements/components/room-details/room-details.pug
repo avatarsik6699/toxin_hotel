@@ -2,7 +2,7 @@ mixin room-details(options = {images: [], categories: [], descriptions: []})
 	.room-details
 		each img, index in options.images
 			.room-details__detail
-				img.room-details__img(src=require(`root/images/${img}.svg`).default)
+				img.room-details__img(src=require(`root/images/details/${img}.svg`).default)
 				.room-details__info
 					span.room-details__category= options.categories[index]
 					span.room-details__description= options.descriptions[index]

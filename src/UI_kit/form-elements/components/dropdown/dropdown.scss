@@ -2,6 +2,7 @@
 @import "/UI_kit/cards/components/calendar/calendar";
 
 .dropdown-wrapper {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
@@ -64,7 +65,7 @@
 		border-radius: 0.2em;
 		border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-		padding: 10px 10px 11px 13px;
+		padding: 10px 28px 11px 13px;
 		background: transparent;
 		
 		font: normal normal 14px/21px Montserrat;
@@ -216,5 +217,4 @@
 	&__button-clear_display-true {
 		display: inline-block;
 	}
-
 }

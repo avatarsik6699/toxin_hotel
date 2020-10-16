@@ -1,0 +1,1 @@
+import 'root/UI_kit/cards/components/find-room/find-room';

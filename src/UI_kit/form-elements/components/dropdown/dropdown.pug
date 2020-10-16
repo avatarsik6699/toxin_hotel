@@ -30,8 +30,8 @@ mixin dropdown(options = {size: 'large', type: 'default', placeholder: 'Текс
 	-if(options.type === 'filter')
 		.dropdown(data-type="filter" data-id=options.id class=dropdownExtraClasses)
 			span.dropdown__title=options.title
-				.dropdown__field-wrapper(class=field_wrapperExtraClasses)
-					input.dropdown__field(type="text", placeholder=options.placeholder autocomplete="off" readonly)
+			.dropdown__field-wrapper(class=field_wrapperExtraClasses)
+				input.dropdown__field(type="text", placeholder=options.placeholder autocomplete="off" readonly)
 	-if(options.type === 'date')
 		.dropdown-wrapper(data-type="date" data-id=options.id)
 			.dropdown(class=`dropdown__from ${dropdownExtraClasses}` data-type="date_from")

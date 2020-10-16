@@ -1,15 +1,15 @@
 include /UI_kit/form-elements/components/button/button
 include /UI_kit/form-elements/components/field/field
-mixin login(options = {title: "Войти"})
-	.login
-		.login__title= options.title
-		.login__email
+mixin signin(options = {title: "Войти"})
+	.signin
+		.signin__title= options.title
+		.signin__email
 			+field({type: "email", placeholder: "Email", size: 'large'})
-		.login__password
+		.signin__password
 			+field({type: "password", placeholder: "Пароль", size: 'large'})
-		.login__login-button
+		.signin__login-button
 			+button({theme: 'full', size: 'large', arrow: true, link_text: "Войти", color: "white"})
-		.login__footer
-			span.login__footer-text Нет аккаунта на Toxin?
-			.login__footer-create
+		.signin__footer
+			span.signin__footer-text Нет аккаунта на Toxin?
+			.signin__footer-create
 				+button({theme: "transparent", size: "small", arrow: false, link_text: "создать", color: "purple"})
