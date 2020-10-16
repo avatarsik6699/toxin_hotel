@@ -1,30 +1,5 @@
 @import '~normalize.css';
 @import './fonts/fonts';
-@import 'FEcomponents/bullet-list/bullet-list';
-@import 'FEcomponents/button/button';
-@import 'FEcomponents/checkbox/checkbox';
-@import 'FEcomponents/checkbox-list/checkbox-list';
-@import 'FEcomponents/checkbox-rich/checkbox-rich';
-@import 'FEcomponents/dropdown/dropdown';
-@import 'FEcomponents/field/field';
-@import 'FEcomponents/like/like';
-@import 'FEcomponents/pagination/pagination';
-@import 'FEcomponents/radio/radio';
-@import 'FEcomponents/range-slider/range-slider';
-@import 'FEcomponents/rate/rate';
-@import 'FEcomponents/review/review';
-@import 'FEcomponents/room-details/room-details';
-@import 'FEcomponents/toggle/toggle';
-
-@import '/UI_kit/cards/components/find-room/find-room';
-@import '/UI_kit/cards/components/booking/booking';
-@import '/UI_kit/cards/components/registration/registration';
-@import '/UI_kit/cards/components/signin/signin';
-@import '/UI_kit/cards/components/room/room';
-@import '/UI_kit/headers-footers/components/header/header';
-@import '/UI_kit/headers-footers/components/footer/footer';
-
-@import '/website_pages/search-room/search-room';
 :root {
     font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
     box-sizing: border-box;

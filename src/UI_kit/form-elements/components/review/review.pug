@@ -1,8 +1,8 @@
 include ../like/like
-mixin review(options = {name: "", time: "", comment: "", like_options: {checked: true, count: 12}})
+mixin review(options = {img: "", name: "", time: "", comment: "", like_options: {checked: true, count: 12}})
 	.review
 		.review__user
-			img.review__avatar(src=require("root/images/avatar.jpg").default)
+			img.review__avatar(src=require(`root/images/reviews/${options.img}.jpg`).default)
 			.review__info
 				span.review__name= options.name
 				span.review__time= options.time
