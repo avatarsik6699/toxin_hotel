@@ -6,14 +6,15 @@
 https://github.com/avatarsik6699/toxin_hotel.git
 ```
 ## Режимы
-```
+``` 
 разработка - npm run dev
 продакшен - npm run build
 ```
 ## Сторонние библиотеки
-```
 Jquery - [документация](https://api.jquery.com/)
+
 JqueryUI  - [документация](https://api.jqueryui.com/)
+
 Слайдер - [JqueryUI-slider](https://api.jqueryui.com/slider/)
+
 Календарь - [air-datepicker](https://www.npmjs.com/package/air-datepicker)
-```
