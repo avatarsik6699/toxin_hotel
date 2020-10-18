@@ -5,7 +5,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
@@ -158,7 +158,7 @@ module.exports = {
             pug,
             files,
             fonts,
-            js
+            js,
         ]
     },
     plugins: [
@@ -169,9 +169,22 @@ module.exports = {
         } ),
         new CleanWebpackPlugin(),
         ...htmlTemplates,
+        new HtmlWebpackPlugin({
+            template: `./src/index.pug`,
+            filename: `index.html`,
+            removeComments: isProd,
+            collapseWhiteSpace: isProd,
+        }),
         new MiniCssExtractPlugin({
             filename: isProd ? '[name]/styles.[contenthash].css' : '[name]/styles.css',
         }),
+        new FaviconsWebpackPlugin({
+            logo: './src/logo.svg',
+            publicPath: './../favicons',
+            outputPath: 'favicons',
+            prefix:'',
+            inject: true,
+        })
     ],
     optimization: optimization(),
 };
