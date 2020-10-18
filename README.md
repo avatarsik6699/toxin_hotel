@@ -12,12 +12,12 @@ https://github.com/avatarsik6699/toxin_hotel.git
 ```
 ## Сторонние библиотеки
 Jquery - [документация](https://api.jquery.com/)
-=======
+
 JqueryUI  - [документация](https://api.jqueryui.com/)
-=======
+
 Слайдер - [JqueryUI-slider](https://api.jqueryui.com/slider/)
-=======
+
 Календарь - [air-datepicker](https://www.npmjs.com/package/air-datepicker)
-=======
+
 Календарь - [air-datepicker](https://www.npmjs.com/package/air-datepicker)
 
