@@ -1,5 +1,5 @@
-@import "../button/button";
-@import "/UI_kit/cards/components/calendar/calendar";
+@import '../button/button';
+@import 'CardsComponents/calendar/calendar';
 
 .dropdown-wrapper {
 	position: relative;
@@ -44,7 +44,7 @@
 		content: '';
 		position: absolute;
 		display: inline-block;
-		background-image: url('/images/expand.svg');
+		background-image: url('~root/images/expand.svg');
 		background-position: center center;
 		background-size: cover;
     width: 13px;

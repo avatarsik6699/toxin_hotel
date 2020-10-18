@@ -1,9 +1,24 @@
-@import '/UI_kit/cards/components/registration/registration';
-@import '/UI_kit/cards/components/signin/signin';
+@import 'root/fonts/fonts.scss';
+@import '~normalize.css';
+@import 'CardsComponents/registration/registration';
+@import 'CardsComponents/signin/signin';
+@import 'HFcomponents/header/header';
+@import 'HFcomponents/footer/footer';
+:root {
+	font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 .user-page {
 	&__main {
 		margin: 0 auto;
-		background-image: url("/images/main_userpage.jpg");
+		background-image: url('~root/images/main_userpage.jpg');
 		background-size: cover;
 		background-position: 100% 100%;
 		background-repeat: no-repeat;

@@ -60,7 +60,7 @@
 
 	&__wrapper_arrow-true::after {
     content: "";
-    background-image: url('/images/arrow_button.svg');
+    background-image: url('~root/images/arrow_button.svg');
     position: absolute;
     width: 20px;
     height: 20px;
@@ -78,6 +78,7 @@
 		color: #FFFFFF;
     text-decoration: none;
 		letter-spacing: -0.2px;
+		cursor: pointer;
 	}
 
 	&__link_size-header-small {

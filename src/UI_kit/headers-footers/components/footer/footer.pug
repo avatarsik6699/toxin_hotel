@@ -9,7 +9,7 @@ mixin footer(options = {icons: [], items: {}})
 			"Подписка": ["Получайте специальные предложения и новости сервиса", "field"]
 		}
 
-	footer.footer
+	.footer
 		.footer__main
 			.footer__main-container
 				.footer__main-info
@@ -33,5 +33,5 @@ mixin footer(options = {icons: [], items: {}})
 				span.footer__submenu-text Copyright © 2018 Toxin отель. Все права зачищены.
 				.footer__submenu-icons
 					each icon in icons
-						a.footer__submenu-icon(href="#")
+						a.footer__submenu-icon(href=`https://${icon}.com`)
 							img.footer__submenu-img(src=require(`root/images/${icon}.svg`).default)

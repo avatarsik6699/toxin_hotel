@@ -1,10 +1,24 @@
-@import '/UI_kit/headers-footers/components/header/header';
-@import '/UI_kit/headers-footers/components/footer/footer';
+@import '~normalize.css';
+@import 'root/fonts/fonts';
+@import 'HFcomponents/header/header';
+@import 'HFcomponents/footer/footer';
+:root {
+    font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background: #E5E5E5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 .headers-footers {
-  &__logo {
-      margin-top: 31px;
-      margin-bottom: 20px;
-      display: block;
+  &__img {
+    width: 50px;
+    height: 48px;
+	margin-bottom: 29px;
   }
 
   &__header-logout {

@@ -1,6 +1,10 @@
 .toggle {
 	display: inline-block;
 
+	&__label {
+		position: relative;
+	}
+
 	&__text {
 		font: 14px/24px Montserrat;
     color: rgba(31, 32, 65, 0.75);

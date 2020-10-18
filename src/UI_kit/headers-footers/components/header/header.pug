@@ -9,7 +9,7 @@ mixin header(options = {additionalProps: {}, items: [], login: true} )
 		}
 		const items = options.items || ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"]
 	
-	header.header
+	.header
 		.header__container
 			a.header__logo(href="#")
 				img.header__logo-img(src=require("root/images/logo.svg").default alt="logo")
@@ -29,9 +29,9 @@ mixin header(options = {additionalProps: {}, items: [], login: true} )
 						case options.login
 							when false
 								li.header__login
-									+button({theme: "transparent", size: "header-small", arrow: false, link_text: "войти", color: "purple"})
+									+button({theme: "transparent", size: "header-small", arrow: false, link_text: "войти", color: "purple", href: ""})
 								li.header__registration
-									+button({theme: "full", size: "header-large", arrow: false, link_text: "зарегистрироваться", color: "white"})
+									+button({theme: "full", size: "header-large", arrow: false, link_text: "зарегистрироваться", color: "white", href: ""})
 							when true
 								span.header__username
 									a.header__username-link Юлий Цезарь  

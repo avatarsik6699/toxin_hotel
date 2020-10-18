@@ -2,99 +2,106 @@ include /UI_kit/headers-footers/components/header/header
 include /UI_kit/headers-footers/components/footer/footer
 include /UI_kit/cards/components/booking/booking
 include /UI_kit/form-elements/components/bullet-list/bullet-list
-include /UI_kit/form-elements/components/review/review;
-include /UI_kit/form-elements/components/room-details/room-details;
--
-  const gallery = ["gallery_1","gallery_2","gallery_3"]
-  const items = ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
-  const rounds_color = ["orange", "green", "purple", "black"]
-  const reviews = [
-  {
-    img: "avatar_1",
-    name: "Мурад Сарафанов", 
-    time: "5 дней назад", 
-    comment: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
-    И стены, действительно, шумоподавляющие. 
-    Выкрикивал комплименты повару — никто не жаловался из соседей.`, 
-    like_options: {checked: true, count: 12}
-  },
-  {
-    img: "avatar_2",
-    name: "Патрисия Стёклышкова", 
-    time: "Неделю назад", 
-    comment: `Обслуживание на высоте! Всё аккуратно, чисто. 
-    Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент`, 
-    like_options: {checked: false, count: 2}
-  }
-  ]
-.room-page
-  header.room-page__header
-    +header({login: false})
-  main.room-page__main
-    .room-page__gallery
-      each photo in gallery
-        figure.room-page__photo
-          img.room-page__photo-img(src=require(`root/images/gallery/${photo}.jpg`).default alt="room photo")
-    .room-page__container
-      .room-page__info
-        .room-page__details
-          span.room-page__details-title Сведения о номере
-          +room-details({
-          images: ["emoticon", "city", "whatshot"], 
-          categories: ["Комфорт", "Удобство", "Уют"], 
-          descriptions: ["Шумопоглощающие стены", "Окно в каждой из спален", "Номер оснащён камином"]})
-        .room-page__votes
-          span.room-page__votes-title Впечатления от номера
-          .room-page__votes-data
-            .room-page__circle
-              svg.room-page__donut-svg
-                circle(r="56" cx="60" cy="55" stroke="url(#orange-gradient)" stroke-width="5" fill="none" stroke-dasharray="172 400" transform="rotate(90 58 58)")
-                defs
-                  linearGradient(id="orange-gradient")
-                    stop(offset="0" stop-color="#FFE29C")
-                    stop(offset="1" stop-color="#FFBA9C")
-                circle(r="56" cx="56" cy="61" stroke="url(#purple-gradient)" stroke-width="5" fill="none" stroke-dasharray="79 300" transform="rotate(-90 58 58)")
-                defs
-                  linearGradient(id="purple-gradient")
-                    stop(offset="0" stop-color="#BA9CFE")
-                    stop(offset="1" stop-color="#A59FFC")
-                circle(r="60" cx="57" cy="56" fill="transparent" stroke="url(#green-gradient)" stroke-width="5" stroke-dasharray="87 400")
-                defs
-                  linearGradient(id="green-gradient")
-                    stop(offset="0" stop-color="#6cd1c1")
-                    stop(offset="1" stop-color="#6ecf99")
-                g
-                  text.room-page__donut-count(x="38px", y="60px") 260
-                  text.room-page__donut-text(x="28px", y="58px" transform="translate(0 19)") голосов
-            ul.room-page__votes-items
-              each item, index in items
-                li.room-page__votes-item
-                  span.room-page__votes-round(class=`room-page__votes-round_color-${rounds_color[index]}`)
-                  span.room-page__votes-text= item
-        .room-page__reviews
-          .room-page__reviews-title Отзывы посетителей номера
-            span.room-page__reviews-count 2 отзыва
-          each review in reviews
-            .room-page__review
-              +review({
-                img: review['img'],
-                name: review["name"], 
-                time: review["time"], 
-                comment: review["comment"], 
-                like_options: {checked: review["like_options"]["checked"], count: review["like_options"]["count"]} 
-                })
-        .room-page__rules
-          span.room-page__rules-title Правила
-          +bullet-list({
-            item: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-          })
-        .room-page__cancel
-          span.room-page__cancel-title Отмена
-          p.room-page__cancel-description 
-            |Бесплатная отмена в течение 48 ч. 
-            |После этого при отмене не позднее чем за 5 дн. 
-            |до прибытия вы получите полный возврат за вычетом сбора за услуги.
-      .room-page__booking
-        +booking({})
-    footer.room-page__footer
-      +footer({})
+include /UI_kit/form-elements/components/review/review
+include /UI_kit/form-elements/components/room-details/room-details
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title room-page
+  body
+    -
+      const gallery = ["gallery_1","gallery_2","gallery_3"]
+      const items = ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
+      const rounds_color = ["orange", "green", "purple", "black"]
+      const reviews = [
+      {
+        img: "avatar_1",
+        name: "Мурад Сарафанов", 
+        time: "5 дней назад", 
+        comment: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+        И стены, действительно, шумоподавляющие. 
+        Выкрикивал комплименты повару — никто не жаловался из соседей.`, 
+        like_options: {checked: true, count: 12}
+      },
+      {
+        img: "avatar_2",
+        name: "Патрисия Стёклышкова", 
+        time: "Неделю назад", 
+        comment: `Обслуживание на высоте! Всё аккуратно, чисто. 
+        Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент`, 
+        like_options: {checked: false, count: 2}
+      }
+      ]
+    .room-page
+      header.room-page__header
+        +header({login: false})
+      main.room-page__main
+        .room-page__gallery
+          each photo in gallery
+            figure.room-page__photo
+              img.room-page__photo-img(src=require(`root/images/gallery/${photo}.jpg`).default alt="room photo")
+        .room-page__container
+          .room-page__info
+            .room-page__details
+              span.room-page__details-title Сведения о номере
+              +room-details({
+              images: ["emoticon", "city", "whatshot"], 
+              categories: ["Комфорт", "Удобство", "Уют"], 
+              descriptions: ["Шумопоглощающие стены", "Окно в каждой из спален", "Номер оснащён камином"]})
+            .room-page__votes
+              span.room-page__votes-title Впечатления от номера
+              .room-page__votes-data
+                .room-page__circle
+                  svg.room-page__donut-svg
+                    circle(r="56" cx="60" cy="55" stroke="url(#orange-gradient)" stroke-width="5" fill="none" stroke-dasharray="172 400" transform="rotate(90 58 58)")
+                    defs
+                      linearGradient(id="orange-gradient")
+                        stop(offset="0" stop-color="#FFE29C")
+                        stop(offset="1" stop-color="#FFBA9C")
+                    circle(r="56" cx="56" cy="61" stroke="url(#purple-gradient)" stroke-width="5" fill="none" stroke-dasharray="79 300" transform="rotate(-90 58 58)")
+                    defs
+                      linearGradient(id="purple-gradient")
+                        stop(offset="0" stop-color="#BA9CFE")
+                        stop(offset="1" stop-color="#A59FFC")
+                    circle(r="60" cx="57" cy="56" fill="transparent" stroke="url(#green-gradient)" stroke-width="5" stroke-dasharray="87 400")
+                    defs
+                      linearGradient(id="green-gradient")
+                        stop(offset="0" stop-color="#6cd1c1")
+                        stop(offset="1" stop-color="#6ecf99")
+                    g
+                      text.room-page__donut-count(x="38px", y="60px") 260
+                      text.room-page__donut-text(x="28px", y="58px" transform="translate(0 19)") голосов
+                ul.room-page__votes-items
+                  each item, index in items
+                    li.room-page__votes-item
+                      span.room-page__votes-round(class=`room-page__votes-round_color-${rounds_color[index]}`)
+                      span.room-page__votes-text= item
+            .room-page__reviews
+              .room-page__reviews-title Отзывы посетителей номера
+                span.room-page__reviews-count 2 отзыва
+              each review in reviews
+                .room-page__review
+                  +review({
+                    img: review['img'],
+                    name: review["name"], 
+                    time: review["time"], 
+                    comment: review["comment"], 
+                    like_options: {checked: review["like_options"]["checked"], count: review["like_options"]["count"]} 
+                    })
+            .room-page__rules
+              span.room-page__rules-title Правила
+              +bullet-list({
+                item: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+              })
+            .room-page__cancel
+              span.room-page__cancel-title Отмена
+              p.room-page__cancel-description 
+                |Бесплатная отмена в течение 48 ч. 
+                |После этого при отмене не позднее чем за 5 дн. 
+                |до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          .room-page__booking
+            +booking({})
+        footer.room-page__footer
+          +footer({})

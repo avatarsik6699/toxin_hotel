@@ -1,4 +1,4 @@
-import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
+import { Calendar } from 'CardsComponents/calendar/calendar';
 new Calendar('input[data-id="registration_1"]', {
 	range: false,
 	multipleDates: false,

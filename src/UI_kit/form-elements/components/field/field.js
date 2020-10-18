@@ -1,4 +1,4 @@
-import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
+import { Calendar } from 'CardsComponents/calendar/calendar';
 const field = document.querySelectorAll('input.field__input[data-id]');
 
 Array.from(field).forEach ((el, index, arr) => {

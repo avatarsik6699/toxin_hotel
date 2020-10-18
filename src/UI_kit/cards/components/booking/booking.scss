@@ -17,13 +17,9 @@
 	}
 
 	&__number {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 21px;
+		font: normal bold 21px/1.2 Montserrat;
     color: #1F2041;
     display: inline-flex;
-    // align-items: center;
 	}
 
 	&__number-icon {
@@ -39,11 +35,7 @@
 	}
 
 	&__price {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 21px;
+		font: normal bold 14px/21px Montserrat;
     color: rgba(31, 32, 65, 0.5);
     display: inline-block;
 	}
@@ -97,20 +89,12 @@
 	}
 
 	&__description-text {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21.5px;
+		font: normal normal 14px/21.5px Montserrat;
     color: rgba(31, 32, 65, 0.75);
 	}
 
 	&__cost {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
+		font: normal normal 14px/20px Montserrat;
     color: rgba(31, 32, 65, 0.75);
 	}
 
@@ -122,11 +106,7 @@
 	}
 
 	&__total-text {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
+		font: normal bold 19px/24px Montserrat;
     color: #1F2041;
 	}
 
@@ -137,11 +117,7 @@
 	}
 
 	&__total-cost {
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 24px;
+		font: normal bold 17px/24px Montserrat;
     color: #1F2041;
 	}
 }

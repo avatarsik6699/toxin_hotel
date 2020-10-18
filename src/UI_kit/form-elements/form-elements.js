@@ -1,5 +1,6 @@
+import './form-elements.scss';
 import { Dropdown } from 'FEcomponents/dropdown/dropdown';
-import { Calendar } from 'root/UI_kit/cards/components/calendar/calendar';
+import { Calendar } from 'CardsComponents/calendar/calendar';
 import 'FEcomponents/range-slider/range-slider';
 
 const dropdown_default = new Dropdown('div.dropdown[data-id="1"]', {

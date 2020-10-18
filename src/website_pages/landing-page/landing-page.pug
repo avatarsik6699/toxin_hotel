@@ -1,11 +1,21 @@
-.landing-page
-  header.landing-page__header
-    +header({login: false})
-  main.landing-page__main
-    .landing-page__main-container
-      .landing-page__find-room
-        +find-room({title: "Найдем номера под ваши пожелания"})
-      .landing-page__slogan
-        span.landing-page__slogan-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-  footer.landing-page__footer
-    +footer({})
+include /UI_kit/headers-footers/components/header/header
+include /UI_kit/headers-footers/components/footer/footer
+include /UI_kit/cards/components/find-room/find-room
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title landing-page
+  body
+    .landing-page
+      header.landing-page__header
+        +header({login: false})
+      main.landing-page__main
+        .landing-page__main-container
+          .landing-page__find-room
+            +find-room({title: "Найдем номера под ваши пожелания"})
+          .landing-page__slogan
+            span.landing-page__slogan-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+      footer.landing-page__footer
+        +footer({})

@@ -1,1 +1,2 @@
-import 'root/UI_kit/cards/components/find-room/find-room';
+import './landing-page.scss';
+import 'CardsComponents/find-room/find-room.js'

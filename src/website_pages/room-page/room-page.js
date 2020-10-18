@@ -1,1 +1,2 @@
-import 'root/UI_kit/cards/components/booking/booking';
+import './room-page.scss';
+import 'CardsComponents/booking/booking';

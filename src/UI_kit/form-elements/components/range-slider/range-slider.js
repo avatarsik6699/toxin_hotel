@@ -1,4 +1,4 @@
-require("jquery-ui/ui/widgets/slider");
+require('jquery-ui/ui/widgets/slider');
 class Slider {
     constructor(root) {
         this.root = root ? $(root) : $('.range-slider-wrapper');

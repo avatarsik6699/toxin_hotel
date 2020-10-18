@@ -1,33 +1,66 @@
+@import 'root/fonts/fonts';
+@import '~normalize.css';
+@import 'CardsComponents/find-room/find-room';
+@import 'CardsComponents/booking/booking';
+@import 'CardsComponents/registration/registration';
+@import 'CardsComponents/signin/signin';
+@import 'CardsComponents/room/room';
+:root {
+	font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	background: #E5E5E5;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 .cards {
+  .cards__logo {
+    width: 49px;
+    height: 49px;
+  }
+
   &__find-room {
     grid-row: 1/2;
     grid-column: 1/2;
   }
+
   &__booking {
     grid-row: 1/3;
     grid-column: 2/3;
   }
+
   &__calendar-wrapper {
     grid-column: 3/4;
-    grid-row: 1/2;
+    grid-row: 1/3;
+    width: 319px;
+    position: relative;
   }
+
   &__registration {
     grid-column: 1/2;
     grid-row: 2/5;
   }
+
   &__login {
     grid-row: 3/4;
     grid-column: 2/3;
   }
+
   &__rooms {
     display: flex;
     flex-flow: column;
     grid-column: 3/4;
     grid-row: 2/3;
   }
+
   &__room-one {
     margin-bottom: 41px;
   }
+
 	&__container {
     max-width: 1260px;
     margin: 0 auto;
@@ -37,5 +70,11 @@
     grid-gap: 39px 0px;
     grid-auto-rows: 1fr;
     grid-auto-flow: dense;
+  }
+}
+
+.datepicker-inline {
+  .datepicker__preview {
+    top: 0;
   }
 }

@@ -16,7 +16,6 @@
 		z-index: -1;
 	}
 
-	
 	&__fake::before {
 		content: "";
 		position: absolute;
@@ -29,7 +28,7 @@
 	}
 
 	&__select:checked + &__fake::before {
-		background-image: url('/images/check_mark.svg');
+		background-image: url('~root/images/check_mark.svg');
 		border: 1px solid #BC9CFF;
 		background-repeat: no-repeat;
 		background-size: 50% 50%;

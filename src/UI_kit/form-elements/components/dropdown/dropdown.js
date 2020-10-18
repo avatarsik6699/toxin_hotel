@@ -63,11 +63,11 @@ export class Dropdown {
                     // нет прямого доступа к кнопкам из html
                     // поэтому data-attrubutes устанавливаем ч/з js
                     this.dom.setDataAttribute(
-                        this.dom.getNode('.dropdown__button-clear','.button__link'), 
+                        this.dom.getNode(`${this.selector} .dropdown__button-clear`,'.button__link'), 
                         'clear')
 
                     this.dom.setDataAttribute(
-                        this.dom.getNode('.dropdown__button-apply','.button__link'), 
+                        this.dom.getNode(`${this.selector} .dropdown__button-apply`,'.button__link'), 
                         'apply')
                 }
             }

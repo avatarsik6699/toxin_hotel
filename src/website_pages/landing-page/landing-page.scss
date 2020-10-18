@@ -1,9 +1,23 @@
-@import '/UI_kit/headers-footers/components/header/header';
-@import '/UI_kit/headers-footers/components/footer/footer';
-@import '/UI_kit/cards/components/find-room/find-room';
+@import 'root/fonts/fonts.scss';
+@import '~normalize.css';
+@import 'HFcomponents/header/header';
+@import 'HFcomponents/footer/footer';
+@import 'CardsComponents/find-room/find-room';
+
+:root {
+	font: normal normal .875em/1.2 Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 .landing-page {
 	&__main {
-		background-image: url('/images/main_photo.jpg'); 
+		background-image: url('~root/images/main_photo.jpg'); 
 		background-repeat: no-repeat;
 		background-size: cover;
 	}

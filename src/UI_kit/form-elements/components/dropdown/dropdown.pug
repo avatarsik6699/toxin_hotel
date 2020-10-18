@@ -24,9 +24,9 @@ mixin dropdown(options = {size: 'large', type: 'default', placeholder: 'Текс
 					-if(options.buttons)
 						.dropdown__buttons-wrapper 
 							.dropdown__button-clear
-								+button({theme: 'none', size: 'small', arrow: false, link_text: 'очистить', color: 'gray'})
+								+button({theme: 'none', size: 'small', arrow: false, link_text: 'очистить', color: 'gray', href: false})
 							.dropdown__button-apply
-								+button({theme: 'none', size: 'small', arrow: false, link_text: 'применить', color: 'purple'})
+								+button({theme: 'none', size: 'small', arrow: false, link_text: 'применить', color: 'purple', href: false})
 	-if(options.type === 'filter')
 		.dropdown(data-type="filter" data-id=options.id class=dropdownExtraClasses)
 			span.dropdown__title=options.title

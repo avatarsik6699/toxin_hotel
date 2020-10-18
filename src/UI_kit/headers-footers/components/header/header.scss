@@ -6,6 +6,8 @@
 	
 	&__logo {
 		margin-right: auto;
+		width: 105px;
+    height: 42px;
 	}
 
 	&__container {
@@ -70,7 +72,7 @@
 	&__item-link_expandable::after {
 		content: '';
 		display: inline-block;
-		background-image: url('/images/expand.svg');
+		background-image: url('~root/images/expand.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
