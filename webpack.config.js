@@ -48,16 +48,28 @@ const pugEntries = {
     'search-room': './src/website_pages/search-room/search-room',
     'registration': './src/website_pages/registration/registration',
     'signin': './src/website_pages/signin/signin',
+    'index' : './src/index',
 }
 
 const htmlTemplates = Object.entries(pugEntries).map( entry => {
-    return new HtmlWebpackPlugin({
+    if (entry[0] === 'index') {
+        return new HtmlWebpackPlugin({
+            template: `${entry[1]}.pug`,
+            chunks: [entry[0], "assets/shared"],
+            filename: `index.html`,
+            removeComments: isProd,
+            collapseWhiteSpace: isProd,
+        })
+    } else {
+        return new HtmlWebpackPlugin({
         template: `${entry[1]}.pug`,
         chunks: [entry[0], "assets/shared"],
         filename: `${entry[0]}/index.html`,
         removeComments: isProd,
         collapseWhiteSpace: isProd,
-    })
+    }) 
+    }
+
 })
 
 
@@ -169,12 +181,6 @@ module.exports = {
         } ),
         new CleanWebpackPlugin(),
         ...htmlTemplates,
-        new HtmlWebpackPlugin({
-            template: `./src/index.pug`,
-            filename: `index.html`,
-            removeComments: isProd,
-            collapseWhiteSpace: isProd,
-        }),
         new MiniCssExtractPlugin({
             filename: isProd ? '[name]/styles.[contenthash].css' : '[name]/styles.css',
         }),

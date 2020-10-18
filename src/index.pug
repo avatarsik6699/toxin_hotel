@@ -3,6 +3,19 @@ html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Document
+		title navigation
 	body
-	h1 Hello
+		-
+			const page_links = ["landing-page", "registration", "room-page", "search-room", "signin"]
+			const ui_links = ["cards", "colors-type", "form-elements", "headers-footers"]
+		.main
+			header.main__header Навигация
+			ul.main__navigation
+				each link in page_links
+					li.main__item
+						a.main__link(href=`https://avatarsik6699.github.io/toxin_hotel/dist/${link}/index.html`)= link
+				each link in ui_links
+					li.main__item
+						a.main__link(href=`https://avatarsik6699.github.io/toxin_hotel/dist/${link}/index.html`)= link
+
+				

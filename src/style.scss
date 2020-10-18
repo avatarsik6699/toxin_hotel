@@ -11,3 +11,51 @@
 *::after {
     box-sizing: inherit;
 }
+
+.main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 100px 0px;
+    
+    &__header {
+        font-size: 24px;
+        color: #8d6ae3;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__navigation {
+        list-style-type: none;
+        padding: 15px 5px;
+        margin: 0;
+        max-width: 500px;
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+        display: flex;
+        flex-flow: column;
+        background: #f4f4f6;
+    }
+
+    &__item:nth-child(5) {
+        border-bottom: 1px solid #d1d1d1;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+    
+    &__link:link { color: rgba(146, 86, 224, 0.918); }
+    &__link:visited { color: rgba(187, 187, 187, 0.116); }
+    &__link:hover { color: rgba(146, 86, 224, 0.25); }
+    &__link:active { background-color: rgba(146, 86, 224, 0.25); }
+}
+
